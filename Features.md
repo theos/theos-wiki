@@ -53,5 +53,7 @@ It’s important to note that GitHub says this repo is a fork of Dustin Howett�
 * Third party frameworks can be placed inside `$THEOS/lib`, and utilised with `instance_EXTRA_FRAMEWORKS`. (kirb)
 * Adds backwards compatibility for [nullability](https://developer.apple.com/swift/blog/?id=25) keywords when building with older versions of clang that don’t support it. (kirb)
 * Building for iOS Simulator now disables linking Substrate by default, allows linking against OS X binaries, and builds for only x86_64 by default (rather than both i386 and x86_64) when building for iOS 8.0 or newer. (kirb)
+* `%hook` nil class/selector errors will be logged by Logos (rather than Substrate, or in the case of the internal generator, failing silently). The source of the errors are therefore more obvious, and the class can be included in the log (which Substrate can’t do). (kirb)
+
 
 TL;DR it’s pretty awesome, you should use it
