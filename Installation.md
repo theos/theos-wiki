@@ -16,6 +16,13 @@ Other platforms may or may not work, but be aware that they are unsupported.
 
 On OS X, Xcode is mandatory. The Command Line Tools package isn’t sufficient for Theos to work.
 
+If you're building for iOS, you should also have dpkg and [ldid](http://iphonedevwiki.net/index.php/Ldid) installed. On OS X, you can do so via Homebrew:
+
+```console
+$ brew install dpkg hbang/repo/ldid
+$ brew install hbang/repo/deviceconsole  # (not required, but very useful)
+```
+
 ## Caveat
 Please note that, by default, `theos` symlinks are not made by this Theos fork in new projects created by NIC. You must set and export the `$THEOS` variable in your environment. See [[the FAQ|FAQ#wheres-the-theos-symlink]] for details.
 
