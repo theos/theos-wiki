@@ -23,6 +23,15 @@ $ brew install dpkg hbang/repo/ldid
 $ brew install hbang/repo/deviceconsole  # (not required, but very useful)
 ```
 
+In order to use `make troubleshoot`, you need to install Ghostbin's [ghost.sh](https://ghostbin.com/ghost.sh) script.
+
+```console
+$ curl https://ghostbin.com/ghost.sh -o /usr/local/bin/ghost
+$ chmod +x /usr/local/bin/ghost
+```
+
+Alternatively, you could install it to `$THEOS/bin/ghost`, but it's useful enough that you probably want it in /usr/local/bin anyway!
+
 ## Caveat
 Please note that, by default, `theos` symlinks are not made by this Theos fork in new projects created by NIC. You must set and export the `$THEOS` variable in your environment. See [[the FAQ|FAQ#wheres-the-theos-symlink]] for details.
 
