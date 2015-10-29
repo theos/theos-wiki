@@ -19,7 +19,7 @@ On OS X, Xcode is mandatory. The Command Line Tools package isn’t sufficient f
 If you're building for iOS, you should also have dpkg and [ldid](http://iphonedevwiki.net/index.php/Ldid) installed. On OS X, you can do so via Homebrew:
 
 ```console
-$ brew install dpkg hbang/repo/ldid
+$ brew install dpkg ldid
 $ brew install hbang/repo/deviceconsole  # (not required, but very useful)
 ```
 
