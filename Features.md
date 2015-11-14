@@ -56,5 +56,6 @@ It’s important to note that GitHub says this repo is a fork of Dustin Howett�
 * `%hook` nil class/selector errors will be logged by Logos (rather than Substrate, or in the case of the internal generator, failing silently). The source of the errors are therefore more obvious, and the class can be included in the log (which Substrate can’t do). (kirb)
 * Integrates the fix needed for tweaks to work in 32-bit processes on iPhone 6s. (saurik)
 * Adds `make troubleshoot`, for getting quick links to troubleshooting info and uploading the `make` output to Ghostbin for sharing. (kirb)
+* Adds support for building for watchOS and tvOS. (kirb)
 
 TL;DR it’s pretty awesome, you should use it
