@@ -31,7 +31,6 @@ It’s important to note that GitHub says this repo is a fork of Dustin Howett�
 * Supports building rpm packages. (rpetrich)
 * Adds `STRIP=0` to not strip on release builds. (rpetrich)
 * Adds a stub `libsubstrate.dylib` binary so you don’t need to get one yourself. (kirb)
-* Kills Cydia if it’s open so you don’t get frustrated by dpkg status database locked errors. (kirb)
 * Fixes lack of a symlink that allows Theos to work on arm64. (kirb)
 * Supports Swift compilation and linking. Incomplete as it is uncertain whether Swift libraries are allowed to be distributed via Cydia. (kirb)
 * Deprecates `NSLog` in favor of more detailed log macros, `HBLogDebug`, `HBLogInfo`, `HBLogWarn`, and `HBLogError`. (kirb)
