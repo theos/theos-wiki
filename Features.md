@@ -34,7 +34,7 @@ Itâ€™s important to note that GitHub says this repo is a fork of Dustin Howettâ€
 * Fixes lack of a symlink that allows Theos to work on arm64. (kirb)
 * Supports Swift compilation and linking. Incomplete as it is uncertain whether Swift libraries are allowed to be distributed via Cydia. (kirb)
 * Deprecates `NSLog` in favor of more detailed log macros, `HBLogDebug`, `HBLogInfo`, `HBLogWarn`, and `HBLogError`. (kirb)
-* Makes debug builds the default. Use `make DEBUG=0` or `FORRELEASE=1` to build without debug. (kirb)
+* Makes debug builds the default. Use `make DEBUG=0`, `FOR_RELEASE=1` or `FINALPACKAGE=1` to build without debug. (kirb)
 * Bumps default deployment target to iOS 4.3 when using iOS SDK 6.0 and iOS 5.0 when using iOS SDK 7.0. (kirb)
 * Includes NIC templates from [DHowett, conradev, WillFour20](https://github.com/DHowett/theos-nic-templates); [uroboro](https://github.com/uroboro/nicTemplates); and [bensge, kirb](https://github.com/sharedInstance/iOS-7-Notification-Center-Widget-Template).
 * Supports building for iOS on Windows. (coolstar)
