@@ -20,7 +20,7 @@ If you're building for iOS, you should also have dpkg and [ldid](http://iphonede
 
 ```console
 $ brew install dpkg ldid
-$ brew install hbang/repo/deviceconsole  # (not required, but very useful)
+$ brew install --HEAD hbang/repo/deviceconsole  # (not required, but very useful)
 ```
 
 In order to use `make troubleshoot`, you need to install Ghostbin's [ghost.sh](https://ghostbin.com/ghost.sh) script.
