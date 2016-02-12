@@ -39,7 +39,7 @@ Please note that, by default, `theos` symlinks are not made by this Theos fork i
 Decide where you want to install Theos. The most common places are `~/theos`, `/opt/theos`, or `/var/theos`.
 
 ```console
-$ git clone --recursive https://github.com/kirb/theos.git
+$ git clone --recursive https://github.com/theos/theos.git
 ```
 
 Don’t forget the `--recursive` flag. The Theos repository contains submodules, and this flag will clone them for you.
