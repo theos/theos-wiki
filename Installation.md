@@ -73,7 +73,7 @@ First – please be sure to move the `include` directory in your existing Theos 
 Now, simply change the remote repo and pull:
 
 ```console
-$ git remote set-url origin https://github.com/kirb/theos.git
+$ git remote set-url origin https://github.com/theos/theos.git
 $ git pull origin master
 ```
 
