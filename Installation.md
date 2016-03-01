@@ -42,7 +42,7 @@ Decide where you want to install Theos. The most common places are `~/theos`, `/
 $ git clone --recursive https://github.com/theos/theos.git
 ```
 
-Don’t forget the `--recursive` flag. The Theos repository contains submodules, and this flag will clone them for you.
+Don’t forget the `--recursive` flag. The Theos repository contains submodules, and this flag will clone them for you. (If you forget this, change directories to a Theos project and run `make update-theos`.)
 
 In almost all situations, /var and /opt will not be writable. If this is the case, it is advised that you do not add `sudo` onto the `git clone` command unless you have a particular reason to. Clone it to a location you have write access to such as your home directory, then move it as root:
 
