@@ -6,7 +6,7 @@ Theos aims to be able to build on the following platforms.
 * OS X Mavericks or newer, with Xcode 5.0 or newer
 * Windows 7 or newer, with Cygwin and [CoolStar’s toolchain](http://sharedinstance.net/2013/12/build-on-windows/)
 * iOS 5.0 or newer, with [CoolStar’s toolchain](http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=iostoolchainDp)
-* Any decently recent Linux distro, using Linux 3.0 or newer with [CoolStar’s toolchain](https://developer.angelxwind.net/Linux/ios-toolchain_clang%2bllvm%2bld64_latest_linux_x86_64.zip)
+* Any decently recent Linux distro, using Linux 3.0 or newer, with [CoolStar’s toolchain](https://developer.angelxwind.net/Linux/ios-toolchain_clang%2bllvm%2bld64_latest_linux_x86_64.zip)
 
 Other platforms may or may not work, but be aware that they are unsupported.
 
