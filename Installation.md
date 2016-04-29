@@ -44,10 +44,10 @@ $ git clone --recursive https://github.com/theos/theos.git
 
 Don’t forget the `--recursive` flag. The Theos repository contains submodules, and this flag will clone them for you. (If you forget this, change directories to a Theos project and run `make update-theos`.)
 
-In almost all situations, /var and /opt will not be writable. If this is the case, it is advised that you do not add `sudo` onto the `git clone` command unless you have a particular reason to. Clone it to a location you have write access to such as your home directory, then move it as root:
+In almost all situations, /var and /opt will not be writable. If this is the case, you must use `sudo` on the above command, and then change the owner to yourself:
 
 ```console
-$ sudo mv theos /opt/theos
+$ sudo chown $(id -u):$(id -g) theos
 ```
 
 While it is possible to download Theos using the “Download ZIP” button on GitHub, this is discouraged as it will make it hard to update Theos in future.
@@ -82,3 +82,36 @@ Then grab the `include` submodule like so:
 ```console
 $ git submodule update --init --remote
 ```
+
+## Moving Theos
+Due to a limitation of old versions of Git, repos with submodules can’t easily be moved without breaking Git features.
+
+If you choose to move the location of Theos, you should first run this script to change the submodule paths from absolute to relative:
+
+```bash
+# Fix the gitdir value in the .git file of each submodule.
+find "$THEOS" -name .git -type f | while read i; do
+  old_path="$(grep gitdir "$i" | cut -d: -f2)"
+
+  if [[ "${old_path:0:3}" == "../" ]]; then
+    echo "$i is already a relative path"
+  else
+    new_path="$(realpath --relative-to="$THEOS" "$old_path")"
+    echo "gitdir: $new_path" > "$i"
+  fi
+done
+
+# Fix the worktree value in the config of each submodule.
+find "$THEOS"/.git/modules -name config | while read i; do
+  old_path="$(git config --file="$i" core.worktree)"
+
+  if [[ "${old_path:0:3}" == "../" ]]; then
+    echo "$i is already a relative path"
+  else
+    new_path="$(realpath --relative-to="$i" "$old_path")"
+    git config --file="$i" core.worktree "$new_path"
+  fi
+done
+```
+
+This changes the pointer to the parent repo to a relative path rather than absolute.
