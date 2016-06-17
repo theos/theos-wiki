@@ -38,4 +38,4 @@ Changes made since [legacy Theos](https://github.com/theos/theos/tree/legacy) ma
 
 If you come across something that should be listed here, edit the page and add it!
 
-Aside from these changes, which shouldn’t affect the majority of projects, we expect projects to continue to build with the latest Theos without any changes required.
+Aside from these changes, which shouldn’t affect the majority of projects, we expect projects to continue to build with the latest Theos without any changes required. If you find something odd, [let us know](https://github.com/theos/theos/issues)!
