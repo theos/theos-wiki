@@ -92,7 +92,7 @@ If you choose to move the location of Theos, you should first run this script to
 find "$THEOS" -name .git -type f | while read i; do
   old_path="$(grep gitdir "$i" | cut -d: -f2)"
 
-  if [[ "${old_path:0:3}" == "../" ]]; then
+  if [[ "${old_path:1:3}" == "../" ]]; then
     echo "$i is already a relative path"
   else
     new_path="$(realpath --relative-to="$THEOS" "$old_path")"
