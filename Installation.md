@@ -64,22 +64,7 @@ $ make update-theos
 If you experience problems, updating Theos is the first thing you should do. This makes it a lot easier to track down the problem if you ask someone for help.
 
 ## Switching from DHowett’s or rpetrich’s Theos
-Theos in its current state is a continuation of the work done by Dustin Howett, with work from Ryan Petrich’s fork included (among others). As such, you can easily “upgrade” from one of these two most commonly used variants of Theos to this one.
-
-Hopefully your copy of Theos was downloaded with Git, and not downloaded as a ZIP file from GitHub (or from DHowett’s Subversion repository). If this is the case, make a backup of everything you’ve changed, delete the Theos directory, and then install Theos from scratch with the directions above.
-
-Simply change the remote repo and pull:
-
-```console
-$ git remote set-url origin https://github.com/theos/theos.git
-$ git pull origin master
-```
-
-Then instruct Git to clone the submodules like so:
-
-```console
-$ git submodule update --init --recursive
-```
+Refer to [[Upgrading from legacy Theos]].
 
 ## Moving Theos
 Due to a limitation of old versions of Git, repos with submodules can’t easily be moved without breaking Git features.
@@ -112,3 +97,5 @@ find "$THEOS"/.git/modules -name config | while read i; do
   fi
 done
 ```
+
+Alternatively, just delete the directory (make sure to grab a copy of anything you put there that might be valuable!) and [[clone it from scratch|Installation#installation]].
