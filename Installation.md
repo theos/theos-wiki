@@ -23,6 +23,16 @@ $ brew install dpkg ldid
 $ brew install --HEAD hbang/repo/deviceconsole  # (not required, but very useful)
 ```
 
+Given that Apple ships old versions of tools such as sed, install `gnu-sed`:
+
+```console
+$ brew install gnu-sed --with-default-names
+```
+
+and add to your `~/.bash_profile` or equivalent:
+
+    export PATH=/usr/local/opt/gnu-sed/bin/:$PATH
+
 In order to use `make troubleshoot`, you need to install Ghostbin's [ghost.sh](https://ghostbin.com/ghost.sh) script.
 
 ```console
