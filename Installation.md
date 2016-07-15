@@ -1,14 +1,16 @@
 Like apps on OS X, Theos is entirely self-contained. It will run from anywhere, as long as the prerequisites are met.
 
 ## Officially supported platforms
-Theos aims to be able to build on the following platforms.
+Theos aims to be able to work on, and build for, the following platforms.
 
-| Platform | Minimum OS version | Prerequisites | Toolchain |
-|----------|--------------------|---------------|-----------|
-| **OS X** | Mavericks (10.9) | — | Xcode 5.0 or newer. Xcode 4.4 supported, but only when building for ARMv6 (1st/2nd generation iPhone/iPod touch). |
-| **iOS** | 5.0 | Jailbroken | [CoolStar’s toolchain](http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=iostoolchainDp) (package on BigBoss repo) |
-| **Windows** | 7 | [Cygwin](https://cygwin.com/) with OpenSSH and make | [CoolStar’s toolchain](http://sharedinstance.net/2013/12/build-on-windows/) (tutorial) |
-| **Linux** | Linux kernel 3.0 | — | [CoolStar’s toolchain](https://developer.angelxwind.net/Linux/ios-toolchain_clang%2bllvm%2bld64_latest_linux_x86_64.zip) (direct ZIP download) |
+| Platform | Minimum OS version | Prerequisites | Toolchain | Targets supported
+|----------|--------------------|---------------|-----------|-------------------|
+| **OS X** | Mavericks (10.9) | — | Xcode 5.0 or newer. Xcode 4.4 supported, but only when building for ARMv6 (1st/2nd generation iPhone/iPod touch). | OS X, iOS, watchOS, tvOS<sup>1</sup> |
+| **iOS** | 5.0 | Jailbroken | [CoolStar’s toolchain](http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=iostoolchainDp) (package on BigBoss repo) | iOS |
+| **Windows** | 7 | [Cygwin](https://cygwin.com/) with OpenSSH and make | [CoolStar’s toolchain](http://sharedinstance.net/2013/12/build-on-windows/) (tutorial) | Windows (Cygwin), iOS |
+| **Linux** | Linux kernel 3.0 | — | [CoolStar’s toolchain](https://developer.angelxwind.net/Linux/ios-toolchain_clang%2bllvm%2bld64_latest_linux_x86_64.zip) (direct ZIP download) | Linux, iOS |
+
+<sup><sup>1</sup> Supports jailbroken devices and simulators, where applicable.</sup>
 
 Other platforms may or may not work, but be aware that they are unsupported. Theos may work on them now, but it may not in future. If you think we should officially support a platform not listed here, [get in touch](https://github.com/theos/theos/issues/new).
 
