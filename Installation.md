@@ -63,6 +63,14 @@ $ make update-theos
 
 If you experience problems, updating Theos is the first thing you should do. This makes it a lot easier to track down the problem if you ask someone for help.
 
+If you see the following when running the command:
+
+```
+make: *** No rule to make target `update-theos'.  Stop.
+```
+
+…then you are either not currently in a project directory, or are using a version of Theos older than this feature. See the following section.
+
 ## Switching from DHowett’s or rpetrich’s Theos
 Refer to [[Upgrading from legacy Theos]].
 
