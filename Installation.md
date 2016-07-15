@@ -36,9 +36,6 @@ $ chmod +x /usr/local/bin/ghost
 
 Alternatively, you could install it to `$THEOS/bin/ghost`, but it's useful enough that you probably want it in /usr/local/bin anyway!
 
-## Caveat
-Please note that, by default, `theos` symlinks are not made by this Theos fork in new projects created by NIC. You must set and export the `$THEOS` variable in your environment. See [[the FAQ|FAQ#wheres-the-theos-symlink]] for details.
-
 ## Installation
 Decide where you want to install Theos. The most common places are `~/theos`, `/opt/theos`, or `/var/theos`.
 
@@ -55,6 +52,12 @@ $ sudo chown $(id -u):$(id -g) theos
 ```
 
 While it is possible to download Theos using the “Download ZIP” button on GitHub, this is discouraged as it will make it hard to update Theos in future.
+
+You must also set the `$THEOS` variable in your environment, and export it so `make` will see its value when you run it. Edit `~/.bash_profile` (or equivalent for your shell of choice) and add this, replacing the value with the full path to where Theos is installed:
+
+```bash
+export THEOS=/absolute/path/to/theos
+```
 
 Further setup may be required, depending on the platforms you will be building for. Visit iPhone Dev Wiki’s [Theos/Setup](http://iphonedevwiki.net/index.php/Theos/Setup) page for more details.
 
