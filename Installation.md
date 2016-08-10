@@ -31,7 +31,7 @@ On iOS, install:
 
 * ldid (Link Identity Editor), available from Telesphoro
 * Perl, available from [Radare](http://cydia.radare.org/)
-* Tylio Certs, available from [uroboro’s repo](https://uroboro.github.io/repo/).
+* CA Certs, available from BigBoss
 
 In order to use `make troubleshoot`, you need to install Ghostbin’s [ghost.sh](https://ghostbin.com/ghost.sh) script.
 
