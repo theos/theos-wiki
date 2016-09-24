@@ -6,7 +6,7 @@ Theos aims to be able to work on, and build for, the following platforms.
 | Platform | Minimum OS version | Prerequisites | Toolchain | Targets supported
 |----------|--------------------|---------------|-----------|-------------------|
 | **OS X** | Mavericks (10.9) | — | Xcode 5.0 or newer. Xcode 4.4 supported, but only when building for ARMv6 (1st/2nd generation iPhone/iPod touch). | OS X, iOS, watchOS, tvOS<sup>1</sup> |
-| **iOS** | 5.0 | Jailbroken | [CoolStar’s toolchain](http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=iostoolchainDp) (package on BigBoss repo) | iOS |
+| **iOS** | 5.0 | Jailbroken | [CoolStar’s toolchain](http://cydia.saurik.com/package/org.coolstar.iostoolchain/) (package on BigBoss repo) | iOS |
 | **Windows** | 7 | [Cygwin](https://cygwin.com/) with OpenSSH and make | [CoolStar’s toolchain](http://sharedinstance.net/2013/12/build-on-windows/) (tutorial) | Windows (Cygwin), iOS |
 | **Linux** | Linux kernel 3.0 | [build-essential](https://packages.debian.org/sid/build-essential) or equivalent | [CoolStar’s toolchain](https://developer.angelxwind.net/Linux/ios-toolchain_clang%2bllvm%2bld64_latest_linux_x86_64.zip) (direct ZIP download) | Linux, iOS |
 
@@ -30,17 +30,8 @@ $ brew install --HEAD hbang/repo/deviceconsole  # (not required, but very useful
 On iOS, install:
 
 * ldid (Link Identity Editor), available from Telesphoro
-* Perl, available from [Radare](http://cydia.radare.org/)
-* CA Certs, available from BigBoss
-
-In order to use `make troubleshoot`, you need to install Ghostbin’s [ghost.sh](https://ghostbin.com/ghost.sh) script.
-
-```console
-$ curl https://ghostbin.com/ghost.sh -o /usr/local/bin/ghost
-$ chmod +x /usr/local/bin/ghost
-```
-
-Alternatively, you could install it to `$THEOS/bin/ghost`, but it's useful enough that you probably want it in /usr/local/bin anyway!
+* Perl, available from [coolstar's public repository](https://coolstar.org/publicrepo/)
+* CA Certs, available from [BigBoss](http://cydia.saurik.com/package/org.thebigboss.cacerts/)
 
 ## Installation
 Decide where you want to install Theos. The most common places are `~/theos`, `/opt/theos`, or `/var/theos`.
@@ -63,6 +54,19 @@ You must also set the `$THEOS` variable in your environment, and export it so `m
 
 ```bash
 export THEOS=/absolute/path/to/theos
+```
+
+In the same file, add the binaries path to `$PATH` so you don't need to preface commands with `$THEOS/bin/` every time:
+
+```bash
+export PATH=$THEOS/bin:$PATH
+```
+
+In order to use `make troubleshoot`, you need to install Ghostbin’s [ghost.sh](https://ghostbin.com/ghost.sh) script.
+
+```console
+$ curl https://ghostbin.com/ghost.sh -o $THEOS/bin/ghost
+$ chmod +x $THEOS/bin/ghost
 ```
 
 Further setup may be required, depending on the platforms you will be building for. Visit iPhone Dev Wiki’s [Theos/Setup](http://iphonedevwiki.net/index.php/Theos/Setup) page for more details.
