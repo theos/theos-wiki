@@ -56,12 +56,6 @@ You must also set the `$THEOS` variable in your environment, and export it so `m
 export THEOS=/absolute/path/to/theos
 ```
 
-In the same file, add the binaries path to `$PATH` so you don't need to preface commands with `$THEOS/bin/` every time:
-
-```bash
-export PATH=$THEOS/bin:$PATH
-```
-
 In order to use `make troubleshoot`, you need to install Ghostbin’s [ghost.sh](https://ghostbin.com/ghost.sh) script.
 
 ```console
