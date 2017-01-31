@@ -45,7 +45,7 @@ Don’t forget the `--recursive` flag. The Theos repository contains submodules,
 In almost all situations, /var and /opt will not be writable. If this is the case, you must use `sudo` on the above command, and then change the owner to yourself:
 
 ```console
-$ sudo chown $(id -u):$(id -g) theos
+$ sudo chown -R $(id -u):$(id -g) theos
 ```
 
 While it is possible to download Theos using the “Download ZIP” button on GitHub, this is discouraged as it will make it hard to update Theos in future.
