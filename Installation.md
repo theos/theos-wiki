@@ -1,11 +1,11 @@
-Like apps on OS X, Theos is entirely self-contained. It will run from anywhere, as long as the prerequisites are met.
+Like apps on macOS, Theos is entirely self-contained. It will run from anywhere, as long as the prerequisites are met.
 
 ## Officially supported platforms
 Theos aims to be able to work on, and build for, the following platforms.
 
 | Platform | Minimum OS version | Prerequisites | Toolchain | Targets supported
 |----------|--------------------|---------------|-----------|-------------------|
-| **OS X** | Mavericks (10.9) | — | Xcode 5.0 or newer. Xcode 4.4 supported, but only when building for ARMv6 (1st/2nd generation iPhone/iPod touch). | OS X, iOS, watchOS, tvOS<sup>1</sup> |
+| **macOS** | Mavericks (10.9) | — | Xcode 5.0 or newer. Xcode 4.4 supported, but only when building for ARMv6 (1st/2nd generation iPhone/iPod touch). | macOS, iOS, watchOS, tvOS<sup>1</sup> |
 | **iOS** | 5.0 | Jailbroken | [CoolStar’s toolchain](http://cydia.saurik.com/package/org.coolstar.iostoolchain/) (package on BigBoss repo) | iOS |
 | **Windows** | 7 | [Cygwin](https://cygwin.com/) with OpenSSH and make | [CoolStar’s toolchain](http://sharedinstance.net/2013/12/build-on-windows/) (tutorial) | Windows (Cygwin), iOS |
 | **Linux** | Linux kernel 3.0 | [build-essential](https://packages.debian.org/sid/build-essential) or equivalent | [CoolStar’s toolchain](https://developer.angelxwind.net/Linux/ios-toolchain_clang%2bllvm%2bld64_latest_linux_x86_64.zip) (direct ZIP download) | Linux, iOS |
@@ -18,9 +18,9 @@ Other platforms may or may not work, but be aware that they are unsupported. The
 * Git (included with Xcode)
 * Toolchains and SDKs for the platforms you intend to build for
 
-On OS X, Xcode is mandatory. The Command Line Tools package isn’t sufficient for Theos to work.
+On macOS, Xcode is mandatory. The Command Line Tools package isn’t sufficient for Theos to work.
 
-If you're building for iOS, you should also have dpkg and [ldid](http://iphonedevwiki.net/index.php/Ldid) installed. On OS X, you can do so via Homebrew:
+If you're building for iOS, you should also have dpkg and [ldid](http://iphonedevwiki.net/index.php/Ldid) installed. On macOS, you can do so via Homebrew:
 
 ```console
 $ brew install dpkg ldid
