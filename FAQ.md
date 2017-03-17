@@ -29,8 +29,8 @@ Theos is ready in terms of supporting *building* Swift packages, however the Swi
 Until this happens, you can play around with Swift by copying the libraries to your device manually:
 
 ```console
-$ ssh device "mkdir -p /usr/lib/libswift/3.0.2"
-$ rsync -aP "$(xcode-select -print-path)/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos" device:/usr/lib/libswift/3.0.2
+$ ssh device "mkdir -p /var/lib/libswift/3.0.2"
+$ rsync -aP "$(xcode-select -print-path)/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos" device:/var/lib/libswift/3.0.2
 ```
 
 This assumes you’re using Xcode 8.0, which includes Swift 3.0.2. Change the version in the path if not. You can find out what version your copy of Xcode has with `swift --version`.
