@@ -7,7 +7,7 @@ It’s important to note that GitHub says this repo is a fork of Dustin Howett�
 * Fallback/last resort headers can be placed at `include/_fallback`; this can be used to provide drop-in replacements for missing SDK headers. (rpetrich)
 * `make update-theos`, predictably enough, updates Theos to the latest commit. (rpetrich)
 * `make package FINALPACKAGE=1` will optimise assets (runs [pincrush](https://github.com/DHowett/pincrush) on PNG images, and converts plists to binary format) and generate a package with a "clean" version (ie, no build number). Recommended when building a package you’re about to release. (rpetrich/kirb)
-* `TWEAK_TARGET_PROCESSES = Preferences MobileMail` is a shortcut for killing a process. (rpetrich)
+* `TWEAK_TARGET_PROCESS = Preferences MobileMail` is a shortcut for killing a process. (rpetrich)
 * Unlike rpetrich’s fork, the internal generator (using Objective-C runtime functions directly) is changed back to the Substrate generator (using Substrate’s wrappers around the runtime functions to assure future compatibility).
 * `make do` is a shortcut for `make package install`. (rpetrich)
 * Each architecture is compiled separately, rather than all being compiled at once. This avoids some issues with the original design of Theos. (rpetrich)
