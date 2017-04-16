@@ -1,8 +1,6 @@
-This is a list of features included in this fork of Theos that aren’t in the [original Theos](https://github.com/DHowett/theos) by Dustin Howett.
+This is a list of features implemented since the [original Theos](https://github.com/theos/theos/tree/legacy) by Dustin Howett. This list is sorted by the date the feature was added. The latest additions are at the bottom.
 
-It’s important to note that GitHub says this repo is a fork of Dustin Howett’s original Theos. Various other community members have forked Theos and added their own improvements, some of which are merged into this Theos. These people are credited at the end of each item below.
-
-(This list is sorted by the date the feature was added. The latest additions are at the bottom.)
+*(To do: These features should be properly documented.)*
 
 * Fallback/last resort headers can be placed at `include/_fallback`; this can be used to provide drop-in replacements for missing SDK headers. (rpetrich)
 * `make update-theos`, predictably enough, updates Theos to the latest commit. (rpetrich)
@@ -55,5 +53,3 @@ It’s important to note that GitHub says this repo is a fork of Dustin Howett�
 * Integrates the fix needed for tweaks to work in 32-bit processes on iPhone 6s. (saurik)
 * Adds `make troubleshoot`, for getting quick links to troubleshooting info and uploading the `make` output to Ghostbin for sharing. (kirb)
 * Adds support for building for watchOS and tvOS. (kirb)
-
-TL;DR it’s pretty awesome, you should use it
