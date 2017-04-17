@@ -1,5 +1,3 @@
-Like apps on macOS, Theos is entirely self-contained. It will run from anywhere, as long as the prerequisites are met.
-
 ## Officially supported platforms
 Theos aims to be able to work on, and build for, the following platforms.
 
@@ -7,8 +5,8 @@ Theos aims to be able to work on, and build for, the following platforms.
 |----------|--------------------|---------------|-----------|-------------------|
 | **macOS** | Mavericks (10.9) | — | Xcode 5.0 or newer. Xcode 4.4 supported, but only when building for ARMv6 (1st/2nd generation iPhone/iPod touch). | macOS, iOS, watchOS, tvOS<sup>1</sup> |
 | **iOS** | 5.0 | Jailbroken | [CoolStar’s toolchain](http://cydia.saurik.com/package/org.coolstar.iostoolchain/) (package on BigBoss repo) | iOS |
-| **Cygwin** | Windows 7 | [Cygwin](https://cygwin.com/) with OpenSSH and make | [CoolStar’s toolchain](http://sharedinstance.net/2013/12/build-on-windows/) (tutorial) | Windows (Cygwin), iOS |
-| **Windows 10** | Build 10586 | [Windows Subsystem for Linux](https://msdn.microsoft.com/en-au/commandline/wsl/install_guide) with [build-essential](https://packages.debian.org/sid/build-essential) | [CoolStar’s toolchain](https://developer.angelxwind.net/Linux/ios-toolchain_clang%2bllvm%2bld64_latest_linux_x86_64.zip) (direct ZIP download) | Linux, iOS |
+| **Windows: [Cygwin](https://cygwin.com/)** | Windows 7 | git, make, perl | [CoolStar’s toolchain](http://sharedinstance.net/2013/12/build-on-windows/) (tutorial) | Windows (Cygwin), iOS |
+| [**Windows Subsystem for Linux**](https://msdn.microsoft.com/en-au/commandline/wsl/install_guide) | Windows 10 build 10586 | [build-essential](https://packages.debian.org/sid/build-essential) | [CoolStar’s toolchain](https://developer.angelxwind.net/Linux/ios-toolchain_clang%2bllvm%2bld64_latest_linux_x86_64.zip) (direct ZIP download) | Linux, iOS |
 | **Linux** | Linux kernel 3.0 | [build-essential](https://packages.debian.org/sid/build-essential) or equivalent | [CoolStar’s toolchain](https://developer.angelxwind.net/Linux/ios-toolchain_clang%2bllvm%2bld64_latest_linux_x86_64.zip) (direct ZIP download) | Linux, iOS |
 
 <sup><sup>1</sup> Supports jailbroken devices and simulators, where applicable.</sup>
@@ -21,12 +19,21 @@ Other platforms may or may not work, but be aware that they are unsupported. The
 
 On macOS, Xcode is mandatory. The Command Line Tools package isn’t sufficient for Theos to work.
 
-If you're building for iOS, you should also have dpkg and [ldid](http://iphonedevwiki.net/index.php/Ldid) installed. On macOS, you can do so via Homebrew:
+If you're building for iOS, you should also have:
+
+* dpkg
+* [ldid](http://iphonedevwiki.net/index.php/Ldid)
+* fakeroot (if using dpkg to build packages – currently required on macOS and Linux)
+
+On macOS, you can install them via Homebrew:
 
 ```console
-$ brew install dpkg ldid
-$ brew install --HEAD hbang/repo/deviceconsole  # (not required, but very useful)
+$ brew install ldid fakeroot
+$ brew install --from-bottle https://raw.githubusercontent.com/Homebrew/homebrew-core/7a4dabfc1a2acd9f01a1670fde4f0094c4fb6ffa/Formula/dpkg.rb
+$ brew pin dpkg
 ```
+
+An older version of dpkg is currently required. See [issue #211](https://github.com/theos/theos/issues/211) for details.
 
 On iOS, install:
 
@@ -34,16 +41,31 @@ On iOS, install:
 * Perl, available from [coolstar's public repository](https://coolstar.org/publicrepo/)
 * CA Certs, available from [BigBoss](http://cydia.saurik.com/package/org.thebigboss.cacerts/)
 
+On Linux, install:
+
+* build-essential, or equivalent for your distro
+* fakeroot
+* git
+* perl
+
+Under Cygwin, install:
+
+* curl
+* git
+* make
+* openssh
+* perl
+
 ## Installation
-Decide where you want to install Theos. The most common places are `~/theos`, `/opt/theos`, or `/var/theos`.
+Decide where you want to install Theos. The most common places are `~/theos`, `/opt/theos`, or `/var/theos`. We recommend `~/theos` or a similar directory that is in a location you can write to without having to use `sudo`. Theos can work from wherever it is placed, so you don’t need to use one of the directories mentioned, or even name the directory `theos`.
 
 ```console
-$ git clone --recursive https://github.com/theos/theos.git
+$ git clone --recursive https://github.com/theos/theos.git ~/theos
 ```
 
-Don’t forget the `--recursive` flag. The Theos repository contains submodules, and this flag will clone them for you. (If you forget this, change directories to a Theos project and run `make update-theos`.)
+Don’t forget the `--recursive` flag. The Theos repository contains submodules, and this flag will clone them for you. If you forget this, change directories to a Theos project and run `make update-theos`.
 
-In almost all situations, /var and /opt will not be writable. If this is the case, you must use `sudo` on the above command, and then change the owner to yourself:
+If you want to use /var, /opt, or any other similar directory, keep in mind that they will not be writable except by root. You must use `sudo` on the above command, and then change the owner to yourself:
 
 ```console
 $ sudo chown -R $(id -u):$(id -g) theos
@@ -78,7 +100,7 @@ If you experience problems, updating Theos is the first thing you should do. Thi
 If you see the following when running the command:
 
 ```
-make: *** No rule to make target `update-theos'.  Stop.
+make: *** No rule to make target 'update-theos'.  Stop.
 ```
 
 …then you are either not currently in a project directory, or are using a version of Theos older than this feature. See the following section.
