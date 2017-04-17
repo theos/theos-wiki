@@ -55,7 +55,7 @@ The following command line arguments are supported. Note that providing argument
 * **application**: a standard iOS app (for unsandboxed jailbreak use).
 * **cydget**: a [Cydget](https://cydia.saurik.com/info/cydget/) lock screen plugin.
 * **flipswitch_switch**: a switch for [Flipswitch](https://github.com/A3Tweaks/Flipswitch).
-* **framework**: a framework to used by other developers.
+* **framework**: a framework to be used by other developers.
 * **library**: a linkable library (e.g. /usr/lib/libblah.dylib).
 * **notification_center_widget**: an iOS 5 – 6 Notification Center Today widget.
 * **notification_center_widget_ios7**: an iOS 7 – 9 Notification Center Today widget.
