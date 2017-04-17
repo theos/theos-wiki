@@ -14,7 +14,7 @@ Explanations of the structure of files and folders within Theos:
   * **targets/**: Makefiles included depending on the current operating system platform, and the platform being targeted. These set up the Theos environment appropriately to build for a platform.
 * **mod/**: Provided to place modules in. Theos will automatically include various files from here.
 * **sdks/**: Provided to place SDKs in.
-* **templates/**: Built-in and user-created [[NIC]] templates.
+* **templates/**: [Built-in](https://github.com/theos/templates) and user-created [[NIC]] templates.
 * **toolchain/**: Provided to place toolchains in, as directed at [[Installation]].
 * **vendor/**: Submodule components included with Theos.
   * **include/**: [Built-in headers](https://github.com/theos/headers) that may or may not be useful for most projects.
