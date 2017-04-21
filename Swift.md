@@ -4,7 +4,7 @@ The Swift runtime is not currently available in Cydia. Binaries that use Swift w
 
 ```console
 $ ssh device "mkdir -p /var/lib/libswift/3.0.2"
-$ rsync -aP "$(xcode-select -print-path)/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos" device:/var/lib/libswift/3.0.2
+$ rsync -aP "$(xcode-select -print-path)/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/" device:/var/lib/libswift/3.0.2
 ```
 
 This assumes you’re using Xcode 8.0, which includes Swift 3.0.2. Change the version in the path if not. You can find out what version your copy of Xcode has with `swift --version`.
