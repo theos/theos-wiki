@@ -1,3 +1,4 @@
+## Contents
 * [[Home]]
 * [[Installation]]
   * [[Upgrading from legacy Theos]]
