@@ -8,4 +8,4 @@ This wiki is the official documentation. Use the list of pages on the right to n
 
 There is also documentation available for the original Theos at the [iPhone Dev Wiki](http://iphonedevwiki.net/index.php/Theos), and [theos-ref](https://github.com/theiostream/theos-ref); however be aware that not all information is updated for the changes Theos has undergone recently.
 
-If you’re experiencing problems, be sure to review the [[troubleshooting]] page.
+If you’re experiencing problems, visit the [[help]] page.
