@@ -35,11 +35,7 @@ $ brew pin dpkg
 
 An older version of dpkg is currently required. See [issue #211](https://github.com/theos/theos/issues/211) for details.
 
-On iOS, install:
-
-* ldid (Link Identity Editor), available from Telesphoro
-* Perl, available from [coolstar's public repository](https://coolstar.org/publicrepo/)
-* CA Certs, available from [BigBoss](http://cydia.saurik.com/package/org.thebigboss.cacerts/)
+On iOS, install [CoolStar’s repository](https://coolstar.org/publicrepo/), and then install the Theos Dependencies package, available from BigBoss.
 
 On Linux, install:
 
@@ -57,7 +53,7 @@ Under Cygwin, install:
 * perl
 
 ## Installation
-Decide where you want to install Theos. The most common places are `~/theos`, `/opt/theos`, or `/var/theos`. We recommend `~/theos` or a similar directory that is in a location you can write to without having to use `sudo`. Theos can work from wherever it is placed, so you don’t need to use one of the directories mentioned, or even name the directory `theos`.
+Decide where you want to install Theos. The most common places are `~/theos`, `/opt/theos`, and `/var/theos`. We recommend `~/theos` or a similar directory that is in a location you can write to without having to use `sudo`. Theos can work from wherever it is placed, so you don’t need to use one of the directories mentioned, or even name the directory `theos`.
 
 ```console
 $ git clone --recursive https://github.com/theos/theos.git ~/theos
