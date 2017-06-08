@@ -1,13 +1,15 @@
 Theos is able to compile [Swift](https://swift.org/) files, including using them alongside files in Objective-C and other languages. Currently, Theos only supports Swift on macOS, using Xcode’s copy of the Swift toolchain, but in future it will expand to support Apple’s official Linux releases, as well as the unofficial community releases for Windows and possibly Cygwin.
 
-The Swift runtime is not currently available in Cydia. Binaries that use Swift will fail to load if the runtime libraries aren’t installed. Until the runtime becomes available as a package, you can play around with Swift by copying the libraries to your device manually:
+The Swift runtime is not currently available in a primary Cydia repo, but libswift 3.1 for 64-bit devices is available from [cydia.hbang.ws](https://cydia.hbang.ws/). Binaries that use Swift will fail to load if the runtime libraries aren’t installed.
+
+You can also manually copy the libraries from Xcode to your device:
 
 ```console
-$ ssh device "mkdir -p /var/lib/libswift/3.0.2"
-$ rsync -aP "$(xcode-select -print-path)/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/" device:/var/lib/libswift/3.0.2
+$ ssh device "mkdir -p /var/lib/libswift/3.1"
+$ rsync -aP "$(xcode-select -print-path)/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/" device:/var/lib/libswift/3.1
 ```
 
-This assumes you’re using Xcode 8.0, which includes Swift 3.0.2. Change the version in the path if not. You can find out what version your copy of Xcode has with `swift --version`.
+This assumes you’re using Xcode 8.3, which includes Swift 3.1. Change the version in the path if not. You can find out what version your copy of Xcode has with `swift --version`.
 
 **If you’re interested in releasing a package using Swift, [let us know!](https://twitter.com/theosdev)** We have been asked by Optimo (BigBoss repo) to gather a list of developers interested in seeing runtime packages released, and your indication of interest will help make it happen.
 
