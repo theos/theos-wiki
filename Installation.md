@@ -7,7 +7,7 @@ Theos aims to be able to work on, and build for, the following platforms.
 | **iOS** | 5.0 | Jailbroken | [CoolStar’s toolchain](http://cydia.saurik.com/package/org.coolstar.iostoolchain/) (package on BigBoss repo) | iOS |
 | **Windows: [Cygwin](https://cygwin.com/)** | Windows 7 | git, make, perl | [CoolStar’s toolchain](http://sharedinstance.net/2013/12/build-on-windows/) (tutorial) | Windows (Cygwin), iOS |
 | [**Windows Subsystem for Linux**](https://msdn.microsoft.com/en-au/commandline/wsl/install_guide) | Windows 10 build 10586 | [build-essential](https://packages.debian.org/sid/build-essential) | [CoolStar’s toolchain](https://developer.angelxwind.net/Linux/ios-toolchain_clang%2bllvm%2bld64_latest_linux_x86_64.zip) (direct ZIP download) | Linux, iOS |
-| **Linux** | Linux kernel 3.0 | [build-essential](https://packages.debian.org/sid/build-essential) or equivalent | [CoolStar’s toolchain](https://developer.angelxwind.net/Linux/ios-toolchain_clang%2bllvm%2bld64_latest_linux_x86_64.zip) (direct ZIP download) | Linux, iOS |
+| **Linux** | Linux kernel 3.16 | [build-essential](https://packages.debian.org/sid/build-essential) or equivalent | [CoolStar’s toolchain](https://developer.angelxwind.net/Linux/ios-toolchain_clang%2bllvm%2bld64_latest_linux_x86_64.zip) (direct ZIP download) | Linux, iOS |
 
 <sup><sup>1</sup> Supports jailbroken devices and simulators, where applicable.</sup>  
 Other platforms (or versions older than listed above) may work, but be aware that they are unsupported. Theos may work on them now, but it may not in future. If you think we should officially support a platform not listed here, [get in touch](https://github.com/theos/theos/issues/new).
