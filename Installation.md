@@ -38,27 +38,29 @@ An older version of dpkg is currently required. See [issue #211](https://github.
 Don’t forget the prerequisites listed in the table above!
 
 ## Installation
-Decide where you want to install Theos. The most common places are `~/theos`, `/opt/theos`, and `/var/theos`. We recommend `~/theos` or a similar directory that is in a location you can write to without having to use `sudo`. Theos can work from wherever it is placed, so you don’t need to use one of the directories mentioned, or even name the directory `theos`.
+Decide where you want to install Theos. We recommend `~/theos` or a similar directory that is in a location you can write to without having to use `sudo`.
+
+You must set the `$THEOS` variable in your environment, and export it so `make` will see its value when you run it. Edit `~/.bash_profile` (or equivalent for your shell of choice) and add this, replacing `~/theos` with the full path to where Theos is installed if you chose another place:
+
+```bash
+export THEOS=~/theos
+```
+
+Then proceed to clone Theos to this directory:
 
 ```console
-$ git clone --recursive https://github.com/theos/theos.git ~/theos
+$ git clone --recursive https://github.com/theos/theos.git $THEOS
 ```
 
 Don’t forget the `--recursive` flag. The Theos repository contains submodules, and this flag will clone them for you. If you forget this, change directories to a Theos project and run `make update-theos`.
 
-If you want to use /var, /opt, or any other similar directory, keep in mind that they will not be writable except by root. You must use `sudo` on the above command, and then change the owner to yourself:
+Other common places are `/opt/theos` and `/var/theos`. If you want to use /var, /opt, or any other similar directory, keep in mind that they will not be writable except by root. You must use `sudo` on the above command, and then change the owner to yourself:
 
 ```console
 $ sudo chown -R $(id -u):$(id -g) theos
 ```
 
 While it is possible to download Theos using the “Download ZIP” button on GitHub, this is discouraged as it will make it hard to update Theos in future.
-
-You must also set the `$THEOS` variable in your environment, and export it so `make` will see its value when you run it. Edit `~/.bash_profile` (or equivalent for your shell of choice) and add this, replacing the value with the full path to where Theos is installed:
-
-```bash
-export THEOS=/absolute/path/to/theos
-```
 
 In order to use `make troubleshoot`, you need to install Ghostbin’s [ghost.sh](https://ghostbin.com/ghost.sh) script.
 
