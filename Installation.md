@@ -17,25 +17,23 @@ Other platforms (or versions older than listed above) may work, but be aware tha
 * Git (included with Xcode)
 * Toolchains and SDKs for the platforms you intend to build for
 
-On macOS, Xcode is mandatory. The Command Line Tools package isn’t sufficient for Theos to work.
+On macOS, [Xcode](https://itunes.apple.com/us/app/xcode/id497799835?ls=1&mt=12) is mandatory. The Command Line Tools package isn’t sufficient for Theos to work.
 
 If you’re building for iOS, you should also have:
 
-* dpkg
 * [ldid](http://iphonedevwiki.net/index.php/Ldid)
-* fakeroot (if using dpkg to build packages – currently required on macOS and Linux)
+* CPAN (Perl) module Compress::Raw::Lzma (not needed on iOS)
 
-On macOS, you can install them via Homebrew:
+On macOS, you can install like so (after installing [Homebrew](https://brew.sh/)):
 
 ```console
-$ brew install ldid fakeroot
-$ brew install --from-bottle https://raw.githubusercontent.com/Homebrew/homebrew-core/7a4dabfc1a2acd9f01a1670fde4f0094c4fb6ffa/Formula/dpkg.rb
-$ brew pin dpkg
+$ brew install ldid
+$ sudo cpan Compress::Raw::Lzma
 ```
 
-An older version of dpkg is currently required. See [issue #211](https://github.com/theos/theos/issues/211) for details.
+(Remove `sudo` from the `cpan` command if you’ve installed Perl from Homebrew.)
 
-Don’t forget the prerequisites listed in the table above!
+Again — don’t forget the prerequisites listed in the table above!
 
 ## Installation
 Decide where you want to install Theos. We recommend `~/theos` or a similar directory that is in a location you can write to without having to use `sudo`.
