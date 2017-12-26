@@ -28,10 +28,12 @@ On macOS, you can install like so (after installing [Homebrew](https://brew.sh/)
 
 ```console
 $ brew install ldid
-$ sudo cpan Compress::Raw::Lzma
+$ sudo cpan IO::Compress::Lzma
 ```
 
 (Remove `sudo` from the `cpan` command if you’ve installed Perl from Homebrew.)
+
+On iOS, ldid is installed as part of the [Theos Dependencies](http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=theosdependenciesDp) package, and the CPAN module is not needed. On Linux and Cygwin, ldid is included as part of the toolchain download so you don’t need to do anything special.
 
 Again — don’t forget the prerequisites listed in the table above!
 
