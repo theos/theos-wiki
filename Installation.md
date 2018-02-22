@@ -15,26 +15,31 @@ Other platforms (or versions older than listed above) may work, but be aware tha
 
 ## Prerequisites
 * Packages listed for your OS above
-* Git (included with Xcode)
-* Toolchains and SDKs for the platforms you intend to build for
+* Toolchain for the platform(s) you intend to build for
 
-On macOS, [Xcode](https://itunes.apple.com/us/app/xcode/id497799835?ls=1&mt=12) is mandatory. The Command Line Tools package isn’t sufficient for Theos to work.
+On macOS, [Xcode](https://itunes.apple.com/us/app/xcode/id497799835?ls=1&mt=12) is mandatory. The Command Line Tools package isn’t sufficient for Theos to work. Xcode includes toolchains for all Apple platforms. On any other platform, you will need to download the toolchain as linked above.
 
-If you’re building for iOS, you should also have:
+If you’re building for iOS, you should have:
 
 * [ldid](http://iphonedevwiki.net/index.php/Ldid)
 * CPAN (Perl) module Compress::Raw::Lzma (not needed on iOS)
+* An iOS SDK (this will be discussed in the next section)
 
 On macOS, you can install like so (after installing [Homebrew](https://brew.sh/)):
 
 ```console
 $ brew install ldid
+```
+
+On iOS, ldid is installed as part of the Theos Dependencies package. On Linux and Cygwin, ldid is included as part of the toolchain download.
+
+To install the Perl module, run:
+
+```console
 $ sudo cpan IO::Compress::Lzma
 ```
 
-(Remove `sudo` from the `cpan` command if you’ve installed Perl from Homebrew.)
-
-On iOS, ldid is installed as part of the [Theos Dependencies](http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=theosdependenciesDp) package, and the CPAN module is not needed. On Linux and Cygwin, ldid is included as part of the toolchain download so you don’t need to do anything special.
+This is not needed on iOS. See [#287](https://github.com/theos/theos/issues/287#issuecomment-364273354) for instructions specific to Cygwin.
 
 Again — don’t forget the prerequisites listed in the table above!
 
@@ -53,7 +58,11 @@ Then proceed to clone Theos to this directory:
 $ git clone --recursive https://github.com/theos/theos.git $THEOS
 ```
 
-Don’t forget the `--recursive` flag. The Theos repository contains submodules, and this flag will clone them for you. If you forget this, change directories to a Theos project and run `make update-theos`.
+Don’t forget the `--recursive` flag. The Theos repository contains submodules, and this flag will clone them for you. If you forget this, you can fix it by running the updater:
+
+```console
+$ $THEOS/bin/update-theos
+```
 
 Other common places are `/opt/theos` and `/var/theos`. If you want to use /var, /opt, or any other similar directory, keep in mind that they will not be writable except by root. You must use `sudo` on the above command, and then change the owner to yourself:
 
@@ -70,7 +79,7 @@ $ curl https://ghostbin.com/ghost.sh -o $THEOS/bin/ghost
 $ chmod +x $THEOS/bin/ghost
 ```
 
-Further setup may be required, depending on the platforms you will be building for. Visit iPhone Dev Wiki’s [Theos/Setup](http://iphonedevwiki.net/index.php/Theos/Setup) page for more details.
+If building for iOS, you will need an SDK. Xcode always provides the latest iOS SDK, but as of Xcode 7.3, it no longer includes private frameworks you can link against. This may be an issue when developing tweaks. You can get a patched SDK from [our SDKs repo](https://github.com/theos/sdks) — click the “Download ZIP” button in the top-right, extract it, and copy the SDK(s) you want into the `sdks/` folder inside Theos.
 
 ## Updating
 Theos utilises a [rolling release](https://en.wikipedia.org/wiki/Rolling_release) model, meaning the latest commit to the Git repo is the latest version of Theos available. Occasionally, you should update Theos. This can be done with:
@@ -85,7 +94,7 @@ If you get a “no such file or directory” error, you’re probably not using 
 $ make update-theos
 ```
 
-(Either of the two commands will work after you’ve updated.)
+(Both commands do the same thing.)
 
 If you experience problems, updating Theos is the first thing you should do. This makes it a lot easier to track down the problem if you ask someone for help.
 
@@ -99,37 +108,3 @@ make: *** No rule to make target 'update-theos'.  Stop.
 
 ## Switching from DHowett’s or rpetrich’s Theos
 Refer to [[Upgrading from legacy Theos]].
-
-## Moving Theos
-Due to a limitation of old versions of Git, repos with submodules can’t easily be moved without breaking Git features.
-
-If you choose to move the location of Theos, you should first run this script to change the submodule paths from absolute to relative:
-
-```bash
-#!/bin/bash
-# Fix the gitdir value in the .git file of each submodule.
-find "$THEOS" -name .git -type f | while read i; do
-  old_path="$(grep gitdir "$i" | cut -d: -f2)"
-
-  if [[ "${old_path:1:3}" == "../" ]]; then
-    echo "$i is already a relative path"
-  else
-    new_path="$(realpath --relative-to="$THEOS" "$old_path")"
-    echo "gitdir: $new_path" > "$i"
-  fi
-done
-
-# Fix the worktree value in the config of each submodule.
-find "$THEOS"/.git/modules -name config | while read i; do
-  old_path="$(git config --file="$i" core.worktree)"
-
-  if [[ "${old_path:0:3}" == "../" ]]; then
-    echo "$i is already a relative path"
-  else
-    new_path="$(realpath --relative-to="$i" "$old_path")"
-    git config --file="$i" core.worktree "$new_path"
-  fi
-done
-```
-
-Alternatively, just delete the directory (make sure to grab a copy of anything you put there that might be valuable!) and [[clone it from scratch|Installation#installation]].
