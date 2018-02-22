@@ -73,11 +73,19 @@ $ chmod +x $THEOS/bin/ghost
 Further setup may be required, depending on the platforms you will be building for. Visit iPhone Dev Wiki’s [Theos/Setup](http://iphonedevwiki.net/index.php/Theos/Setup) page for more details.
 
 ## Updating
-Theos utilises a [rolling release](https://en.wikipedia.org/wiki/Rolling_release) model, meaning the latest commit to the Git repo is the latest version of Theos available. Occasionally, you should update Theos. This can be done simply by switching to a directory containing a Theos makefile and then running:
+Theos utilises a [rolling release](https://en.wikipedia.org/wiki/Rolling_release) model, meaning the latest commit to the Git repo is the latest version of Theos available. Occasionally, you should update Theos. This can be done with:
+
+```console
+$ $THEOS/bin/update-theos
+```
+
+If you get a “no such file or directory” error, you’re probably not using a recent version of Theos that added this script. As an alternative, switch to a directory containing a Theos makefile and then run:
 
 ```console
 $ make update-theos
 ```
+
+(Either of the two commands will work after you’ve updated.)
 
 If you experience problems, updating Theos is the first thing you should do. This makes it a lot easier to track down the problem if you ask someone for help.
 
@@ -87,7 +95,7 @@ If you see the following when running the command:
 make: *** No rule to make target 'update-theos'.  Stop.
 ```
 
-…then you are either not currently in a project directory, or are using a version of Theos older than this feature. See the following section.
+…then you’re using a legacy version of Theos. Read onto the next section.
 
 ## Switching from DHowett’s or rpetrich’s Theos
 Refer to [[Upgrading from legacy Theos]].
