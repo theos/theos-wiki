@@ -6,7 +6,7 @@ Theos aims to be able to work on, and build for, the following platforms.
 | **macOS** | Mavericks (10.9) | Xcode 5.0 or newer. Xcode 4.4 supported, but only when building for ARMv6 (1st/2nd generation iPhone/iPod touch). | macOS, iOS, watchOS, tvOS<sup>1</sup> |
 | **iOS** | 5.0 | Jailbroken device; [CoolStar’s repository](https://coolstar.org/publicrepo/) installed; [Theos Dependencies](http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=theosdependenciesDp) (package on BigBoss repo) | iOS |
 | **Linux** | Linux kernel 3.16 | build-essential (or equivalent for your distro), fakeroot, git, perl; [CoolStar’s toolchain](https://developer.angelxwind.net/Linux/ios-toolchain_clang%2bllvm%2bld64_latest_linux_x86_64.zip) (direct ZIP download) | Linux, iOS |
-| [**Windows Subsystem for Linux**](https://msdn.microsoft.com/en-au/commandline/wsl/install_guide) | Windows 10 build 14393 | (Same as Linux) | (Same as Linux) |
+| [**Windows Subsystem for Linux**](https://docs.microsoft.com/windows/wsl) | Windows 10 build 14393 | (Same as Linux) | (Same as Linux) |
 | **Windows: [Cygwin](https://cygwin.com/)**<sup>2</sup> | Windows 7 | curl, git, make, openssh, perl; [CoolStar’s toolchain](http://sharedinstance.net/2013/12/build-on-windows/) (tutorial)| Windows (Cygwin), iOS |
 
 <sup><sup>1</sup> Supports jailbroken devices and simulators, where applicable.  
