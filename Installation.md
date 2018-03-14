@@ -44,6 +44,8 @@ This is not needed on iOS. See [#287](https://github.com/theos/theos/issues/287#
 Again — don’t forget the prerequisites listed in the table above!
 
 ## Installation
+> **⚠️ Warning if installing Theos on iOS:** The `git` command below currently won’t work due to a GitHub change that made it incompatible with Telesphoreo’s version of OpenSSL. saurik is working on an update. See [issue #293](https://github.com/theos/theos/issues/293) for more information and a workaround.
+
 Decide where you want to install Theos. We recommend `~/theos` or a similar directory that is in a location you can write to without having to use `sudo`.
 
 You must set the `$THEOS` variable in your environment, and export it so `make` will see its value when you run it. Edit `~/.bash_profile` (or equivalent for your shell of choice) and add this, replacing `~/theos` with the full path to where Theos is installed if you chose another place:
