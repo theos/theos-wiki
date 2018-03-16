@@ -36,7 +36,12 @@ On iOS, ldid is installed as part of the Theos Dependencies package. On Linux an
 To install the Perl module, run:
 
 ```console
+$ # for macOS:
+$ brew install xz
 $ sudo cpan IO::Compress::Lzma
+
+$ # for Debian/Ubuntu (use the equivalent of this for other distros):
+$ sudo apt install libio-compress-lzma-perl
 ```
 
 This is not needed on iOS. See [#287](https://github.com/theos/theos/issues/287#issuecomment-364273354) for instructions specific to Cygwin.
