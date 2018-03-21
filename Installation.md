@@ -74,7 +74,7 @@ $ $THEOS/bin/update-theos
 Other common places are `/opt/theos` and `/var/theos`. If you want to use /var, /opt, or any other similar directory, keep in mind that they will not be writable except by root. You must use `sudo` on the above command, and then change the owner to yourself:
 
 ```console
-$ sudo chown -R $(id -u):$(id -g) theos
+$ sudo chown -R $(id -u):$(id -g) $THEOS
 ```
 
 While it is possible to download Theos using the “Download ZIP” button on GitHub, this is discouraged as it will make it hard to update Theos in future.
