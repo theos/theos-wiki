@@ -88,6 +88,14 @@ $ chmod +x $THEOS/bin/ghost
 
 If building for iOS, you will need an SDK. Xcode always provides the latest iOS SDK, but as of Xcode 7.3, it no longer includes private frameworks you can link against. This may be an issue when developing tweaks. You can get a patched SDK from [our SDKs repo](https://github.com/theos/sdks) — click the “Download ZIP” button in the top-right, extract it, and copy the SDK(s) you want into the `sdks/` folder inside Theos.
 
+### Toolchain
+macOS and iOS should have been covered with the prerequisites. For Linux setups (WSL included) you'll have to do one more step:
+
+```console
+$ mkdir -p $THEOS/toolchain
+$ unzip ios-toolchain_clang+llvm+ld64_latest_linux_x86_64.zip -d $THEOS/toolchain
+```
+
 ## Updating
 Theos utilises a [rolling release](https://en.wikipedia.org/wiki/Rolling_release) model, meaning the latest commit to the Git repo is the latest version of Theos available. Occasionally, you should update Theos. This can be done with:
 
