@@ -53,11 +53,13 @@ Again — don’t forget the prerequisites listed in the table above!
 
 Decide where you want to install Theos. We recommend `~/theos` or a similar directory that is in a location you can write to without having to use `sudo`.
 
-You must set the `$THEOS` variable in your environment, and export it so `make` will see its value when you run it. Edit `~/.bash_profile` (or equivalent for your shell of choice) and add this, replacing `~/theos` with the full path to where Theos is installed if you chose another place:
+You must set the `$THEOS` variable in your environment, and export it so `make` will see its value when you run it. Create or edit `~/.bash_profile` (or equivalent for your shell of choice) and add this, replacing `~/theos` with the full path to where Theos is installed if you chose another place:
 
 ```bash
 export THEOS=~/theos
 ```
+
+For this change to take effect, you must restart your shell. The easiest way to do this is to simply open a new tab and close the previous one.
 
 Then proceed to clone Theos to this directory:
 
