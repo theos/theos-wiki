@@ -22,7 +22,7 @@ On macOS, [Xcode](https://itunes.apple.com/us/app/xcode/id497799835?ls=1&mt=12) 
 If you’re building for iOS, you should have:
 
 * [ldid](http://iphonedevwiki.net/index.php/Ldid)
-* CPAN (Perl) module Compress::Raw::Lzma (not needed on iOS)
+* xz-utils (or lzma)
 * An iOS SDK (this will be discussed in the next section)
 
 On macOS, you can install like so (after installing [Homebrew](https://brew.sh/)):
@@ -33,23 +33,21 @@ $ brew install ldid
 
 On iOS, ldid is installed as part of the Theos Dependencies package. On Linux and Cygwin, ldid is included as part of the toolchain download.
 
-To install the Perl module, run:
+On iOS 11 with the Electra jailbreak, the Theos Dependencies package isn’t usable. You’ll need to install Sam Bingner’s Cydia repo, http://repo.bingner.com/, then install these packages:
 
-```console
-$ # for macOS:
-$ brew install xz
-$ sudo cpan IO::Compress::Lzma
+* CA Certs (org.thebigboss.cacerts)
+* grep
+* iOS Toolchain (org.coolstar.iostoolchain)
+* Link Identity Editor (ldid)
+* Perl
+* rsync
 
-$ # for Debian/Ubuntu (use the equivalent of this for other distros):
-$ sudo apt install libio-compress-lzma-perl
-```
-
-This is not needed on iOS. See [#287](https://github.com/theos/theos/issues/287#issuecomment-364273354) for instructions specific to Cygwin.
+Tip: After you tap “Install” in Cydia, you can tap “Continue Queuing” to add the package to the queue. Once you’ve filled the queue, tap “Confirm” (like you usually would) to install them all.
 
 Again — don’t forget the prerequisites listed in the table above!
 
 ## Installation
-> **⚠️ Warning if installing Theos on iOS:** The `git` command below currently won’t work due to a GitHub change that made it incompatible with Telesphoreo’s version of OpenSSL. saurik is working on an update. See [issue #293](https://github.com/theos/theos/issues/293) for more information and a workaround.
+> **⚠️ Warning if installing Theos on iOS:** Unless you’re using the Electra jailbreak, the `git` command below currently won’t work due to a GitHub change that made it incompatible with Telesphoreo’s version of OpenSSL. saurik is working on an update. See [issue #293](https://github.com/theos/theos/issues/293) for more information and a workaround.
 
 Decide where you want to install Theos. We recommend `~/theos` or a similar directory that is in a location you can write to without having to use `sudo`.
 
