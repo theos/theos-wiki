@@ -4,7 +4,7 @@ Theos aims to be able to work on, and build for, the following platforms.
 | Platform | Minimum OS version | Prerequisites | Targets supported
 |----------|--------------------|---------------|-------------------|
 | **macOS** | Mavericks (10.9) | Xcode 5.0 or newer. Xcode 4.4 supported, but only when building for ARMv6 (1st/2nd generation iPhone/iPod touch). | macOS, iOS, watchOS, tvOS<sup>1</sup> |
-| **iOS** | 5.0 | Jailbroken device; [CoolStar’s repository](https://coolstar.org/publicrepo/) installed; [Theos Dependencies](http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=theosdependenciesDp) (package on BigBoss repo) | iOS |
+| **iOS** | 5.0 | Jailbroken device; [CoolStar’s repository](https://coolstar.org/publicrepo/) (and [Sam Bingner’s repository](http://repo.bingner.com/) if on iOS 11) installed; [Theos Dependencies](http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=theosdependenciesDp) (package on BigBoss repo) | iOS |
 | **Linux** | Linux kernel 3.16 | build-essential (or equivalent for your distro), fakeroot, git, perl; [CoolStar’s toolchain](https://developer.angelxwind.net/Linux/ios-toolchain_clang%2bllvm%2bld64_latest_linux_x86_64.zip) (direct ZIP download) | Linux, iOS |
 | [**Windows Subsystem for Linux**](https://docs.microsoft.com/windows/wsl) | Windows 10 build 14393 | (Same as Linux) | (Same as Linux) |
 | **Windows: [Cygwin](https://cygwin.com/)**<sup>2</sup> | Windows 7 | curl, git, make, openssh, perl; [CoolStar’s toolchain](http://sharedinstance.net/2013/12/build-on-windows/) (tutorial)| Windows (Cygwin), iOS |
@@ -32,15 +32,6 @@ $ brew install ldid
 ```
 
 On iOS, ldid is installed as part of the Theos Dependencies package. On Linux and Cygwin, ldid is included as part of the toolchain download.
-
-On iOS 11 with the Electra jailbreak, the Theos Dependencies package isn’t usable. You’ll need to install Sam Bingner’s Cydia repo, http://repo.bingner.com/, then install these packages:
-
-* CA Certs (org.thebigboss.cacerts)
-* grep
-* iOS Toolchain (org.coolstar.iostoolchain)
-* Link Identity Editor (ldid)
-* Perl
-* rsync
 
 Tip: After you tap “Install” in Cydia, you can tap “Continue Queuing” to add the package to the queue. Once you’ve filled the queue, tap “Confirm” (like you usually would) to install them all.
 
