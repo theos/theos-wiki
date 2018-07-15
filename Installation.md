@@ -33,8 +33,6 @@ $ brew install ldid
 
 On iOS, ldid is installed as part of the Theos Dependencies package. On Linux and Cygwin, ldid is included as part of the toolchain download.
 
-Tip: After you tap “Install” in Cydia, you can tap “Continue Queuing” to add the package to the queue. Once you’ve filled the queue, tap “Confirm” (like you usually would) to install them all.
-
 Again — don’t forget the prerequisites listed in the table above!
 
 ## Installation
