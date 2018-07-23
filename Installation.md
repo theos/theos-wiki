@@ -46,7 +46,9 @@ You must set the `$THEOS` variable in your environment, and export it so `make` 
 export THEOS=~/theos
 ```
 
-For this change to take effect, you must restart your shell. The easiest way to do this is to simply open a new tab and close the previous one.
+For this change to take effect, you must restart your shell. The easiest way to do this is to simply open a new tab and close the previous one, or kill the app in the taskswitcher (iOS). Do `echo $THEOS` on your shell to check if this is working.
+
+On iOS, `~/.profile` can be an alternative file used in place of `~/.bash_profile`, so rename the file if the check above didn't work.
 
 Then proceed to clone Theos to this directory:
 
