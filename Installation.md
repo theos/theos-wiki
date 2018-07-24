@@ -28,7 +28,7 @@ If you’re building for iOS, you should have:
 On macOS, you can install like so (after installing [Homebrew](https://brew.sh/)):
 
 ```console
-$ brew install ldid
+$ brew install ldid xz
 ```
 
 On iOS, ldid is installed as part of the Theos Dependencies package. On Linux and Cygwin, ldid is included as part of the toolchain download.
