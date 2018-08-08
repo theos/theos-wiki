@@ -9,8 +9,10 @@ Theos aims to be able to work on, and build for, the following platforms.
 | [**Windows Subsystem for Linux**](https://docs.microsoft.com/windows/wsl) | Windows 10 build 14393 | (Same as Linux) | (Same as Linux) |
 | **Windows: [Cygwin](https://cygwin.com/)**<sup>2</sup> | Windows 7 | curl, git, make, openssh, perl; [CoolStar’s toolchain](http://sharedinstance.net/2013/12/build-on-windows/) (tutorial)| Windows (Cygwin), iOS |
 
-<sup><sup>1</sup> Supports jailbroken devices and simulators, where applicable.  
-<sup>2</sup> Please consider using Windows Subsystem for Linux instead if possible. Cygwin works but is quite limited.</sup>  
+<sup>
+<sup>1</sup> Supports jailbroken devices and simulators, where applicable.  
+<sup>2</sup> Please consider using Windows Subsystem for Linux instead if possible. Cygwin works but is quite limited.
+</sup>
 Other platforms (or versions older than listed above) may work, but be aware that they are unsupported. Theos may work on them now, but it may not in future. If you think we should officially support a platform not listed here, [get in touch](https://github.com/theos/theos/issues/new).
 
 ## Prerequisites
