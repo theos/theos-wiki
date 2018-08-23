@@ -1,6 +1,10 @@
 ## Contents
 * [[Home]]
 * [[Installation]]
+  * [[iOS|Installation-iOS]]
+  * [[macOS|Installation-macOS]]
+  * [[Linux|Installation-Linux]]
+  * [[Cygwin|Installation-Cygwin]]
   * [[Upgrading from legacy Theos]]
 * [[Features]]
   * [[NIC]]

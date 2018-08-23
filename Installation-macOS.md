@@ -1,5 +1,8 @@
 This guide will help you install Theos on your macOS device.
 
+Supports jailbroken devices and simulators, where applicable.
+
+
 | Platform | Minimum OS version | Targets supported
 |----------|--------------------|-------------------|
 | **macOS** | Mavericks (10.9) | macOS, iOS, watchOS, tvOS |

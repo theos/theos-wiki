@@ -38,6 +38,8 @@ This guide will help you install Theos on your Linux machine, Linux within Windo
 		curl https://github.com/theos/sdks/archive/master.zip -o master.zip
 		unzip master.zip -d $THEOS/sdks
 
+		It is recommended that you use an SDK for iOS 9.3 or below due to the toolchain not being up to date as on other platforms.
+
 6. Set up ghostbin script
 
 		curl https://ghostbin.com/ghost.sh -o $THEOS/bin/ghost
