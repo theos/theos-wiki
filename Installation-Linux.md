@@ -35,7 +35,7 @@ This guide will help you install Theos on your Linux machine, Linux within Windo
 
     You can get patched SDKs from [our SDKs repo](https://github.com/theos/sdks).
 
-		curl https://github.com/theos/sdks/archive/master.zip -o master.zip
+		curl -LO https://github.com/theos/sdks/archive/master.zip
 		unzip master.zip -d $THEOS/sdks
 
 		It is recommended that you use an SDK for iOS 9.3 or below due to the toolchain not being up to date as on other platforms.
