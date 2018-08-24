@@ -40,7 +40,7 @@ Please consider using [Windows Subsystem for Linux](Installation-Linux) instead 
 
     You can get patched SDKs from [our SDKs repo](https://github.com/theos/sdks).
 
-		curl https://github.com/theos/sdks/archive/master.zip -o master.zip
+		curl -LO https://github.com/theos/sdks/archive/master.zip
 		unzip master.zip -d $THEOS/sdks
 
 6. Set up ghostbin script

@@ -28,11 +28,15 @@ Supports jailbroken devices and simulators, where applicable.
 
         git clone --recursive https://github.com/theos/theos.git $THEOS
 
-4. Get an iOS SDK:
+4. Get the toolchain:
+
+	Xcode contains the toolchain.
+
+5. Get an iOS SDK:
 
     Xcode always provides the latest iOS SDK, but as of Xcode 7.3, it no longer includes private frameworks you can link against. This may be an issue when developing tweaks. You can get a patched SDK from [our SDKs repo](https://github.com/theos/sdks) — click the “Download ZIP” button in the top-right, extract it, and copy the SDK(s) you want into the `sdks/` folder inside Theos.
 
-5. Set up ghostbin script
+6. Set up ghostbin script
 
         curl https://ghostbin.com/ghost.sh -o $THEOS/bin/ghost
         chmod +x $THEOS/bin/ghost

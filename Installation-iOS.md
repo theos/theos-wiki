@@ -20,14 +20,18 @@ This guide will help you install Theos on your iOS jailbroken device.
 
         git clone --recursive https://github.com/theos/theos.git $THEOS
 
-4. Get an iOS SDK:
+4. Get the toolchain:
+
+	Theos Dependencies installs iOS Toolchain.
+
+5. Get an iOS SDK:
 
     You can get patched SDKs from [our SDKs repo](https://github.com/theos/sdks).
 
         curl https://github.com/theos/sdks/archive/master.zip -o master.zip
         unzip master.zip -d $THEOS/sdks
 
-5. Set up ghostbin script
+6. Set up ghostbin script
 
         curl https://ghostbin.com/ghost.sh -o $THEOS/bin/ghost
         chmod +x $THEOS/bin/ghost
