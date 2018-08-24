@@ -5,7 +5,7 @@ Theos aims to be able to work on, and build for, the following platforms.
 - **[[iOS|Installation-iOS]]** on iOS 5 and up.
 - **[[macOS|Installation-macOS]]** on Mavericks (10.9) and up.
 - **[[Linux/WSL|Installation-Linux]]** on Linux kernel 3.16 or Windows 10 build 14393, and up.
-- **[[Cygwin|Installation-Cygwin]]** on Windows XP and up.
+- **[[Cygwin|Installation-Cygwin]]** on Windows 7 and up.
 
 Other platforms (or versions older than listed above) may work, but be aware that they are unsupported. Theos may work on them now, but it may not in future. If you think we should officially support a platform not listed here, [get in touch](https://github.com/theos/theos/issues/new).
 
