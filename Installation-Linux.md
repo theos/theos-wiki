@@ -38,9 +38,22 @@ This guide will help you install Theos on your Linux machine, Linux within Windo
 		curl -LO https://github.com/theos/sdks/archive/master.zip
 		unzip master.zip -d $THEOS/sdks
 
-		It is recommended that you use an SDK for iOS 9.3 or below due to the toolchain not being up to date as on other platforms.
+    It is recommended that you use an SDK for iOS 9.3 or below due to the toolchain not being up to date as on other platforms.
 
 6. Set up ghostbin script
 
 		curl https://ghostbin.com/ghost.sh -o $THEOS/bin/ghost
 		chmod +x $THEOS/bin/ghost
+
+<details>
+<summary>Optional: Installing Swift</summary>
+<br>
+In the future, the Swift toolchain for Linux shall be available in a pre-packaged format. However, it is currently possible to build an iOS-compatible Swift toolchain for Linux using the <a href="https://github.com/kabiroberai/swift-toolchain-linux">kabiroberai/swift-toolchain-linux</a> repository. 
+<br><br>
+After following the instructions in the repository's README.md, run the following command
+<br><br>
+
+    tar xzf </path/to/toolchain.tar.gz> -C $THEOS/toolchain
+
+Note that the minimum SDK version required to compile Swift code is currently iOS 11.2. As a result, you may need a newer version of the iOS toolchain, since the one listed above does not support this SDK.
+</details>
