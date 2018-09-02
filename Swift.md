@@ -1,6 +1,6 @@
-Theos is able to compile [Swift](https://swift.org/) files, including using them alongside files in Objective-C and other languages. Currently, Theos only supports Swift on macOS, using Xcode’s copy of the Swift toolchain, but in future it will expand to support Apple’s official Linux releases, as well as the unofficial community releases for Windows and possibly Cygwin.
+Theos is able to compile [Swift](https://swift.org/) files, including using them alongside files in Objective-C and other languages. Currently, Theos supports Swift on macOS, iOS, and Linux, but in future it may expand to support the unofficial community releases for Windows and possibly Cygwin. Instructions on installing the Swift toolchains on iOS and Linux can be found on their respective installation wiki pages.
 
-The Swift runtime is currently on BigBoss under libswif4. Binaries that use Swift will fail to load if the runtime libraries aren’t installed.
+The Swift runtime is currently on BigBoss under libswift4. Binaries that use Swift will fail to load if the runtime libraries aren’t installed.
 
 You can also manually copy the libraries from Xcode to your device:
 
