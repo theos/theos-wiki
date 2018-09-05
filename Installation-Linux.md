@@ -32,6 +32,7 @@ This guide will help you install Theos on your Linux machine, Linux within Windo
 
         curl https://kabiroberai.com/toolchain/download.php?toolchain=ios-linux -Lo toolchain.tar.gz
         tar xzf toolchain.tar.gz -C $THEOS/toolchain
+        rm toolchain.tar.gz
 
 6. Get an iOS SDK:
 
@@ -49,5 +50,6 @@ This guide will help you install Theos on your Linux machine, Linux within Windo
 
 		curl https://kabiroberai.com/toolchain/download.php?toolchain=swift-ubuntu1610 -Lo swift-toolchain.tar.gz
 		tar xzf swift-toolchain.tar.gz -C $THEOS/toolchain
+		rm swift-toolchain.tar.gz
 
     Note that the minimum SDK version required to compile Swift code is currently iOS 11.2.
