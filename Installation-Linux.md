@@ -4,7 +4,7 @@ This guide will help you install Theos on your Linux machine, Linux within Windo
 |----------|--------------------|-------------------|
 | **Linux** <br> **Windows 10** | Linux kernel 3.16 <br> Windows 10 build 14393 | Linux, iOS |
 
-1. Follow the instructions at <http://apt.llvm.org> to add the correct clang-6.0 source for your Linux distro
+1. Follow the instructions at <http://apt.llvm.org> to add the correct clang-6.0 source for your Linux distro. Once this is done, run `sudo apt-get update` to refresh your sources.
 
 2. Install the following prerequisites:
 
