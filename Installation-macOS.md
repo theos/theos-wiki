@@ -18,25 +18,25 @@ Supports jailbroken devices and simulators, where applicable.
 
         brew install ldid xz
 
-2. Set up the `THEOS` environment variable:
+1. Set up the `THEOS` environment variable:
 
         echo "export THEOS=~/theos" >> ~/.profile
 
     For this change to take effect, you must restart your shell. Open a new tab and do `echo $THEOS` on your shell to check if this is working.
 
-3. Clone Theos to your device:
+1. Clone Theos to your device:
 
         git clone --recursive https://github.com/theos/theos.git $THEOS
 
-4. Get the toolchain:
+1. Get the toolchain:
 
 	Xcode contains the toolchain.
 
-5. Get an iOS SDK:
+1. Get an iOS SDK:
 
     Xcode always provides the latest iOS SDK, but as of Xcode 7.3, it no longer includes private frameworks you can link against. This may be an issue when developing tweaks. You can get a patched SDK from [our SDKs repo](https://github.com/theos/sdks) — click the “Download ZIP” button in the top-right, extract it, and copy the SDK(s) you want into the `sdks/` folder inside Theos.
 
-6. Set up ghostbin script
+1. Set up ghostbin script:
 
         curl https://ghostbin.com/ghost.sh -o $THEOS/bin/ghost
         chmod +x $THEOS/bin/ghost

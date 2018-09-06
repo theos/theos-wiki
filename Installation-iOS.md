@@ -11,21 +11,21 @@ This guide will help you install Theos on your iOS jailbroken device.
     * Theos Dependencies (package on BigBoss repo, relies on the previous repositories being installed first)
     * swift-toolchain [optional] (package on BigBoss repo, required for compiling Swift code)
 
-2. Set up the `THEOS` environment variable:
+1. Set up the `THEOS` environment variable:
 
         echo "export THEOS=~/theos" >> ~/.profile
 
     For this change to take effect, you must restart your shell. Kill the terminal app in the taskswitcher then re-open the terminal app and do `echo $THEOS` on your shell to check if this is working.
 
-3. Clone Theos to your device:
+1. Clone Theos to your device:
 
         git clone --recursive https://github.com/theos/theos.git $THEOS
 
-4. Get the toolchain:
+1. Get the toolchain:
 
 	Theos Dependencies installs iOS Toolchain.
 
-5. Get an iOS SDK:
+1. Get an iOS SDK:
 
     You can get patched SDKs from [our SDKs repo](https://github.com/theos/sdks).
 
@@ -34,7 +34,7 @@ This guide will help you install Theos on your iOS jailbroken device.
 
     Note that if you wish to compile Swift code, the minimum SDK required is iOS 11.2.
 
-6. Set up ghostbin script
+1. Set up ghostbin script:
 
         curl https://ghostbin.com/ghost.sh -o $THEOS/bin/ghost
         chmod +x $THEOS/bin/ghost

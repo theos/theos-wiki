@@ -2,6 +2,8 @@
 
 Theos aims to be able to work on, and build for, the following platforms.
 
+All the commands shown on the following instructions are meant to be run as the "user" user, _not_ **root**. Similarly, Theos is also meant to be run as a normal user, _not_ **root**.
+
 - **[[iOS|Installation-iOS]]** on iOS 5 and up.
 - **[[macOS|Installation-macOS]]** on Mavericks (10.9) and up.
 - **[[Linux/WSL|Installation-Linux]]** on Linux kernel 3.16 or Windows 10 build 14393, and up.
