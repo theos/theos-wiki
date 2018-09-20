@@ -56,7 +56,7 @@ This guide will help you install Theos on your Linux machine, Linux within Windo
 
 1. Install the Swift toolchain (optional):
 
-		curl https://kabiroberai.com/toolchain/download.php?toolchain=swift-ubuntu1610 -Lo swift-toolchain.tar.gz
+		curl https://kabiroberai.com/toolchain/download.php?toolchain=swift-ubuntu-latest -Lo swift-toolchain.tar.gz
 		tar xzf swift-toolchain.tar.gz -C $THEOS/toolchain
 		rm swift-toolchain.tar.gz
 
