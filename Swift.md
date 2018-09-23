@@ -1,19 +1,20 @@
-Theos is able to compile [Swift](https://swift.org/) files, including using them alongside files in Objective-C and other languages. Currently, Theos supports Swift on macOS, iOS, and Linux, but in future it may expand to support the unofficial community releases for Windows and possibly Cygwin. Instructions on installing the Swift toolchains on iOS and Linux can be found on their respective installation wiki pages.
+Theos is able to compile [Swift](https://swift.org/) files, including using them alongside files in Objective-C and other languages. Currently, Theos supports Swift on macOS, iOS, and Linux. Instructions on installing the Swift toolchains on [iOS](https://github.com/theos/theos/wiki/Installation-iOS) and [Linux](https://github.com/theos/theos/wiki/Installation-Linux) can be found on their respective installation wiki pages.
 
-The Swift runtime is currently on BigBoss under libswift4. Binaries that use Swift will fail to load if the runtime libraries aren’t installed.
+## Swift Runtime
 
-You can also manually copy the libraries from Xcode to your device:
+In order to run Swift binaries built with Theos, you must install the Swift runtime on your iOS device. This can currently be found on BigBoss under the `libswift4` package. It is recommended that you add this package as a dependency in your control file, with `Depends: ${LIBSWIFT}`
 
-```console
-$ ssh device "mkdir -p /usr/lib/libswift/4.0.3"
-$ rsync -aP "$(xcode-select -print-path)/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/" device:/usr/lib/libswift/4.0.3
-```
+## Interoperability with Objective-C
 
-This assumes you’re using Xcode 9.2, which includes Swift 4.0.3. Change the version in the path if not. You can find out what version your copy of Xcode has with `swift --version`.
+### Swift to Objective-C
+In order to use Swift classes in Objective-C, import the [auto-generated swiftmodule header](https://developer.apple.com/documentation/swift/imported_c_and_objective-c_apis/importing_swift_into_objective-c) by adding `#import <[instance]-Swift.h>` to your Objective-C file.
+
+### Objective-C to Swift
+Create a file named `<instance>-Bridging-Header.h` in your project directory, and import any Objective-C headers into it which you wish to expose to Swift.
 
 ## Variables
 * `<instance>_SWIFTFLAGS` or `<file>_SWIFTFLAGS` *string*. Default: empty. Custom flags to pass to the Swift compiler for all files or a specific file (respectively).
-* `<instance>_BRIDGING_HEADER` *filename*. Default: `<instance>-Bridging-Header.h`. The [Objective-C bridging header](https://developer.apple.com/library/content/documentation/Swift/Conceptual/BuildingCocoaApps/MixandMatch.html) to be imported into all Swift files during compilation.
+* `<instance>_BRIDGING_HEADER` *filename*. Default: `<instance>-Bridging-Header.h`. The path to the [Objective-C bridging header](https://developer.apple.com/documentation/swift/imported_c_and_objective-c_apis/importing_objective-c_into_swift) to be imported into all Swift files during compilation. For more information, see [Objective-C to Swift Interoperability](#objective-c-to-swift).
 
 ## Caveat: Libraries
 It’s possible to use Swift for library instances (i.e. tweaks, dylibs, frameworks, and other bundles), and you can try it out right now (note: no Logos support yet), but there is a fundamental problem with Swift as it stands – its [ABI](https://en.wikipedia.org/wiki/Application_binary_interface) is not stable. Each release of Swift to date has made major changes that make it impossible to use, for instance, a binary built with Swift 2.3 with the Swift 3.0 runtime libraries. It is also not possible to have multiple runtime versions loaded into a process at a time. Using a mismatched runtime version can cause dyld loading errors, meaning your code won’t run at all, or crashes due to changes to the runtime’s behavior.
