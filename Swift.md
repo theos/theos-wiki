@@ -7,10 +7,10 @@ In order to run Swift binaries built with Theos, you must install the Swift runt
 ## Interoperability with Objective-C
 
 ### Swift to Objective-C
-In order to use Swift classes in Objective-C, import the [auto-generated swiftmodule header](https://developer.apple.com/documentation/swift/imported_c_and_objective-c_apis/importing_swift_into_objective-c) by adding `#import <[instance]-Swift.h>` to your Objective-C file.
+In order to use Swift classes in Objective-C, import the [auto-generated swiftmodule header](https://developer.apple.com/documentation/swift/imported_c_and_objective-c_apis/importing_swift_into_objective-c) by adding `#import <[instance]-Swift.h>` to your Objective-C file. Swift declarations that you wish to expose to Objective-C must be marked with the `public` or `open` modifier.
 
 ### Objective-C to Swift
-Create a file named `<instance>-Bridging-Header.h` in your project directory, and import any Objective-C headers into it which you wish to expose to Swift.
+Create a file named `<instance>-Bridging-Header.h` in your project directory, and import any Objective-C headers into it which you wish to expose to Swift. This header file is automatically imported into any Swift files you create.
 
 ## Variables
 * `<instance>_SWIFTFLAGS` or `<file>_SWIFTFLAGS` *string*. Default: empty. Custom flags to pass to the Swift compiler for all files or a specific file (respectively).
