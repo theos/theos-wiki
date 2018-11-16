@@ -46,9 +46,9 @@ This guide will help you install Theos on your Linux machine, Linux within Windo
 
     You can get patched SDKs from [our SDKs repo](https://github.com/theos/sdks).
 
-		curl -LO https://github.com/theos/sdks/archive/master.zip
-		unzip master.zip -d $THEOS/sdks
-                rm master.zip
+        curl -LO https://github.com/theos/sdks/archive/master.zip
+        unzip master.zip -d $THEOS/sdks
+        rm master.zip
 
 1. Set up ghostbin script:
 
