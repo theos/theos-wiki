@@ -31,6 +31,7 @@ This guide will help you install Theos on your iOS jailbroken device.
 
         curl -LO https://github.com/theos/sdks/archive/master.zip
         unzip master.zip -d $THEOS/sdks
+		rm master.zip
 
     Note that if you wish to compile Swift code, the minimum SDK required is iOS 11.2.
 

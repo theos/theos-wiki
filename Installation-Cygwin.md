@@ -42,6 +42,7 @@ Please consider using [Windows Subsystem for Linux](Installation-Linux) instead 
 
 		curl -LO https://github.com/theos/sdks/archive/master.zip
 		unzip master.zip -d $THEOS/sdks
+		rm master.zip
 
 1. Set up ghostbin script:
 
