@@ -24,7 +24,7 @@ This guide will help you install Theos on your Linux machine, Linux within Windo
 		sudo apt update
 
 		# Install dependencies
-		sudo apt install bash clang-6.0 coreutils git grep make openssh-client perl rsync sed
+		sudo apt install bash clang-6.0 coreutils fakeroot git grep make openssh-client perl rsync sed
 
 1. Set up the `THEOS` environment variable:
 
