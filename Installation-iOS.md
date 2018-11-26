@@ -6,9 +6,8 @@ This guide will help you install Theos on your iOS jailbroken device.
 
 1. Install the following prerequisites:
 
-    * [CoolStar’s repository](https://coolstar.org/publicrepo/)
     * [Sam Bingner’s repository](http://repo.bingner.com/)
-    * Theos Dependencies (package on BigBoss repo, relies on the previous repositories being installed first)
+    * Theos Dependencies (package on BigBoss repo, relies on the previous repository being installed first)
     * swift-toolchain [optional] (package on BigBoss repo, required for compiling Swift code)
 
 1. Set up the `THEOS` environment variable:
