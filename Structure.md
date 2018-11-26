@@ -18,6 +18,6 @@ Explanations of the structure of files and folders within Theos:
   * **dm.pl/**: The files for [the script](https://github.com/theos/dm.pl) used to build deb packages without needing dpkg-deb.
   * **include/**: [Built-in headers](https://github.com/theos/headers) that may or may not be useful for most projects.
   * **lib/**: [Built-in library](https://github.com/theos/lib) definitions that may or may not be useful for most projects.
-  * **logos/**: The files for [[Logos]].
+  * **logos/**: The files for [Logos](https://github.com/theos/logos).
   * **nic/**: The files for [[NIC]].
 * **Prefix.pch**: The prefix header imported into the compilation process for all C-based languages. Used to define macros and import framework headers.
