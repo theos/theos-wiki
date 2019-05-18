@@ -4,17 +4,19 @@ This guide will help you install Theos on your Linux machine, Linux within Windo
 |----------|--------------------|-------------------|
 | **Linux** <br> **Windows 10** | Linux kernel 3.16 <br> Windows 10 build 14393 | Linux, iOS |
 
+All the commands shown on the following instructions are meant to be run as the "user" user, _not_ **root**. Similarly, Theos is also meant to be run as a normal user, _not_ **root**.
+
 1. Install the following prerequisites:
 
 	Follow the instructions at <http://apt.llvm.org> to add the correct clang-6.0 source for your Linux distro. Then run `sudo apt-get update` to refresh your sources.
 
 	On Linux or WSL:
 
-        sudo apt-get install fakeroot git perl clang-6.0 build-essential
+		sudo apt-get install fakeroot git perl clang-6.0 build-essential
 
-    <sup>
-    <sup>*</sup> build-essential or equivalent for your distro.
-    </sup>
+	<sup>
+	<sup>*</sup> build-essential or equivalent for your distro.
+	</sup>
 
 	On Google Cloud Shell:
 
@@ -28,29 +30,29 @@ This guide will help you install Theos on your Linux machine, Linux within Windo
 
 1. Set up the `THEOS` environment variable:
 
-        echo "export THEOS=~/theos" >> ~/.profile
+		echo "export THEOS=~/theos" >> ~/.profile
 
-    For this change to take effect, you must restart your shell. Open a new tab and do `echo $THEOS` on your shell to check if this is working.
+	For this change to take effect, you must restart your shell. Open a new tab and do `echo $THEOS` on your shell to check if this is working.
 
 1. Clone Theos to your device:
 
-        git clone --recursive https://github.com/theos/theos.git $THEOS
+		git clone --recursive https://github.com/theos/theos.git $THEOS
 
 1. Get the toolchain:
 
-        curl https://kabiroberai.com/toolchain/download.php?toolchain=ios-linux -Lo toolchain.tar.gz
-        tar xzf toolchain.tar.gz -C $THEOS/toolchain
-        rm toolchain.tar.gz
+		curl https://kabiroberai.com/toolchain/download.php?toolchain=ios-linux -Lo toolchain.tar.gz
+		tar xzf toolchain.tar.gz -C $THEOS/toolchain
+		rm toolchain.tar.gz
 
 1. Get an iOS SDK:
 
-    You can get patched SDKs from [our SDKs repo](https://github.com/theos/sdks).
+	You can get patched SDKs from [our SDKs repo](https://github.com/theos/sdks).
 
-        curl -LO https://github.com/theos/sdks/archive/master.zip
-        unzip master.zip -d $THEOS/sdks
-        rm master.zip
+		curl -LO https://github.com/theos/sdks/archive/master.zip
+		unzip master.zip -d $THEOS/sdks
+		rm master.zip
 
-1. Set up ghostbin script:
+1. Set up ghostbin script (optional):
 
 		curl https://ghostbin.com/ghost.sh -o $THEOS/bin/ghost
 		chmod +x $THEOS/bin/ghost
@@ -61,4 +63,4 @@ This guide will help you install Theos on your Linux machine, Linux within Windo
 		tar xzf swift-toolchain.tar.gz -C $THEOS/toolchain
 		rm swift-toolchain.tar.gz
 
-    Note that the minimum SDK version required to compile Swift code is currently iOS 11.2.
+	Note that the minimum SDK version required to compile Swift code is currently iOS 11.2.
