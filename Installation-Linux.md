@@ -49,8 +49,10 @@ All the commands shown on the following instructions are meant to be run as the 
 	You can get patched SDKs from [our SDKs repo](https://github.com/theos/sdks).
 
 		curl -LO https://github.com/theos/sdks/archive/master.zip
-		unzip master.zip -d $THEOS/sdks
-		rm master.zip
+		TMP=$(mktemp -d)
+		unzip master.zip -d $TMP
+		mv $TMP/*.sdk $THEOS/sdks
+		rm -r master.zip $TMP
 
 1. Set up ghostbin script (optional):
 

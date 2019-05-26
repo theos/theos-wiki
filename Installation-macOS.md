@@ -36,7 +36,13 @@ All the commands shown on the following instructions are meant to be run as the 
 
 1. Get an iOS SDK:
 
-	Xcode always provides the latest iOS SDK, but as of Xcode 7.3, it no longer includes private frameworks you can link against. This may be an issue when developing tweaks. You can get a patched SDK from [our SDKs repo](https://github.com/theos/sdks) — click the “Download ZIP” button in the top-right, extract it, and copy the SDK(s) you want into the `sdks/` folder inside Theos.
+	Xcode always provides the latest iOS SDK, but as of Xcode 7.3, it no longer includes private frameworks you can link against. This may be an issue when developing tweaks. You can get patched SDKs from [our SDKs repo](https://github.com/theos/sdks).
+
+		curl -LO https://github.com/theos/sdks/archive/master.zip
+		TMP=$(mktemp -d)
+		unzip master.zip -d $TMP
+		mv $TMP/*.sdk $THEOS/sdks
+		rm -r master.zip $TMP
 
 1. Set up ghostbin script (optional):
 
