@@ -32,7 +32,7 @@ All the commands shown on the following instructions are meant to be run as the 
 		curl -LO https://github.com/theos/sdks/archive/master.zip
 		TMP=$(mktemp -d)
 		unzip master.zip -d $TMP
-		mv $TMP/*.sdk $THEOS/sdks
+		mv $TMP/sdks-master/*.sdk $THEOS/sdks
 		rm -r master.zip $TMP
 
 1. Set up ghostbin script (optional):
