@@ -18,6 +18,10 @@ All the commands shown on the following instructions are meant to be run as the 
 	<sup>*</sup> build-essential or equivalent for your distro.
 	</sup>
 
+	Additionally on WSL:
+
+		sudo update-alternatives --set fakeroot /usr/bin/fakeroot-tcp
+
 	On Google Cloud Shell:
 
 		# Setup llvm repository
