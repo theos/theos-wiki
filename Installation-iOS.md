@@ -35,11 +35,6 @@ All the commands shown on the following instructions are meant to be run as the 
 		mv $TMP/sdks-master/*.sdk $THEOS/sdks
 		rm -r master.zip $TMP
 
-1. Set up ghostbin script (optional):
-
-		curl https://ghostbin.com/ghost.sh -o $THEOS/bin/ghost
-		chmod +x $THEOS/bin/ghost
-
 1. Install the Swift toolchain (optional):
 
 	`swift-toolchain` is on the BigBoss repo.
