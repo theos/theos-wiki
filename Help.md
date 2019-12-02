@@ -21,7 +21,7 @@ When sharing a snippet of code, it is usually best to post it to a paste site. W
 You can run `make troubleshoot` from within a project directory to upload some diagnostic information to [Ghostbin](https://ghostbin.com/), and copy the link to your clipboard. If `ghost` is not installed, you can do so by executing the following:
 
 ```bashsession
-$ curl https://ghostbin.com/ghost.sh -o /usr/local/bin/ghost
+$ curl https://ghostbin.co/ghost.sh -o /usr/local/bin/ghost
 $ chmod +x /usr/local/bin/ghost
 ```
 
