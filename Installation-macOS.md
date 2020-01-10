@@ -22,7 +22,9 @@ All the commands shown on the following instructions are meant to be run as the 
 
 1. Set up the `THEOS` environment variable:
 
-		echo "export THEOS=~/theos" >> ~/.profile
+		echo "export THEOS=~/theos" >> ~/.zshrc
+
+    If you are using macOS 10.14 or older, change `~/.zshrc` to `~/.profile`. The default shell was changed from bash to zsh in macOS 10.15. You can check which one you are using by running `echo $SHELL`.
 
 	For this change to take effect, you must restart your shell. Open a new tab and do `echo $THEOS` on your shell to check if this is working.
 
