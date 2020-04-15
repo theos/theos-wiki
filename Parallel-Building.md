@@ -1,12 +1,12 @@
 Theos is recommended to be used with the latest version of [GNU Make](https://www.gnu.org/software/make/). Unfortunately, the Xcode toolchain does not include the latest version of Make. In fact, it’s Make 3.81, from 2006!
 
-While the Theos maintainers make their best efforts to support Make 3.81, there is a certain limit to what we can do. One of these limits is with parallel building. Parallel building is where a build system like Theos divides build work up in order to fully take advantage of all logical cores (threads) of the CPU. This is one significant way a build can be sped up, especially for larger projects.
+While the Theos maintainers make their best efforts to support Make 3.81, there is a certain limit to what we can do. One of these limits is with parallel building. Parallel building is where a build tool like Make divides its work up in order to fully take advantage of all logical cores (threads) of the CPU. This is one significant way a build can be sped up, especially for larger projects.
 
 You may have been directed here by the following notice output by Theos:
 
-> `==> Notice: Build may be slow as Theos isn’t using all available CPU cores on this computer. Consider upgrading GNU Make: https://github.com/theos/theos/wiki/Parallel-Building`
+> **==> Notice:** Build may be slow as Theos isn’t using all available CPU cores on this computer. Consider upgrading GNU Make: https://github.com/theos/theos/wiki/Parallel-Building
 
-…In which case, you are using a version of Make older than 4.0. To remain compatible, Theos will not activate its parallel building support, and hence only one logical core of your CPU will be used, leading to slower build times.
+…In which case, you are using a version of Make older than 4.0. To remain compatible, Theos will not activate its parallel building support, so only one logical core of your CPU will be used, leading to slow build times.
 
 ----
 
@@ -31,7 +31,7 @@ These instructions assume you use Homebrew, and have installed Theos as we recom
 
 ----
 
-If you’d rather not perform these steps, you can permanently disable this notice by using the following:
+If you’d rather not perform these steps, you can permanently ignore this notice by using the following:
 
 ```bash
 echo 'THEOS_IGNORE_PARALLEL_BUILDING_NOTICE = yes' >> ~/.theosrc
