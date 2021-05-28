@@ -1,4 +1,4 @@
-This guide will help you install Theos on your Linux machine, Linux within Windows via [Windows Subsystem for Linux](https://docs.microsoft.com/windows/wsl), [Google Cloud Shell](https://console.cloud.google.com/cloudshell).
+This guide will help you install Theos on your Linux machine, Linux within Windows via [Windows Subsystem for Linux](https://docs.microsoft.com/windows/wsl), or [Google Cloud Shell](https://console.cloud.google.com/cloudshell).
 
 | Platform | Minimum OS version | Targets supported
 |----------|--------------------|-------------------|
@@ -8,14 +8,12 @@ All the commands shown on the following instructions are meant to be run as the 
 
 1. Install the following prerequisites:
 
-	Follow the instructions at <http://apt.llvm.org> to add the correct clang-6.0 source for your Linux distro. Then run `sudo apt-get update` to refresh your sources.
-
 	On Linux or WSL:
 
-		sudo apt-get install fakeroot git perl clang-6.0 build-essential
+		sudo apt-get install fakeroot git perl unzip build-essential libtinfo5
 
 	<sup>
-	<sup>*</sup> build-essential or equivalent for your distro.
+	<sup>*</sup> build-essential and libtinfo5 or the equivalents for your distro.
 	</sup>
 
 	Additionally on WSL:
@@ -30,7 +28,7 @@ All the commands shown on the following instructions are meant to be run as the 
 		sudo apt update
 
 		# Install dependencies
-		sudo apt install bash clang-6.0 coreutils fakeroot git grep make openssh-client perl rsync sed
+		sudo apt install bash coreutils fakeroot git grep make openssh-client perl rsync sed
 
 1. Set up the `THEOS` environment variable:
 
@@ -42,11 +40,14 @@ All the commands shown on the following instructions are meant to be run as the 
 
 		git clone --recursive https://github.com/theos/theos.git $THEOS
 
-1. Get the toolchain:
+1. Get a toolchain:
 
-		curl https://kabiroberai.com/toolchain/download.php?toolchain=ios-linux -Lo toolchain.tar.gz
-		tar xzf toolchain.tar.gz -C $THEOS/toolchain
-		rm toolchain.tar.gz
+		curl -LO https://github.com/sbingner/llvm-project/releases/latest/download/linux-ios-arm64e-clang-toolchain.tar.lzma
+		TMP=$(mktemp -d)
+		tar --lzma -xvf linux-ios-arm64e-clang-toolchain.tar.lzma -C $TMP
+		mkdir -p $THEOS/toolchain/linux/iphone
+		mv $TMP/ios-arm64e-clang-toolchain/* $THEOS/toolchain/linux/iphone/
+		rm -r linux-ios-arm64e-clang-toolchain.tar.lzma $TMP
 
 1. Get an iOS SDK:
 
