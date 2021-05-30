@@ -28,7 +28,7 @@ All the commands shown on the following instructions are meant to be run as the 
 		sudo apt update
 
 		# Install dependencies
-		sudo apt install bash coreutils fakeroot git grep make openssh-client perl rsync sed
+		sudo apt install bash coreutils fakeroot git grep make openssh-client perl rsync sed unzip libtinfo5
 
 1. Set up the `THEOS` environment variable:
 
@@ -42,12 +42,27 @@ All the commands shown on the following instructions are meant to be run as the 
 
 1. Get a toolchain:
 
+	General use:
+
 		curl -LO https://github.com/sbingner/llvm-project/releases/latest/download/linux-ios-arm64e-clang-toolchain.tar.lzma
 		TMP=$(mktemp -d)
 		tar --lzma -xvf linux-ios-arm64e-clang-toolchain.tar.lzma -C $TMP
 		mkdir -p $THEOS/toolchain/linux/iphone
 		mv $TMP/ios-arm64e-clang-toolchain/* $THEOS/toolchain/linux/iphone/
 		rm -r linux-ios-arm64e-clang-toolchain.tar.lzma $TMP
+
+	Swift compatible:
+
+		sudo apt install zstd
+		curl -LO https://github.com/CRKatri/llvm-project/releases/download/swift-5.3.2-RELEASE/swift-5.3.2-RELEASE-ubuntu18.04.tar.zst
+		TMP=$(mktemp -d)
+		tar --zst -xvf swift-5.3.2-RELEASE-ubuntu18.04.tar.zst -C $TMP
+		mkdir -p $THEOS/toolchain/linux/iphone $THEOS/toolchain/swift
+		mv $TMP/swift-5.3.2-RELEASE-ubuntu18.04/* $THEOS/toolchain/linux/iphone/
+		ln -s $THEOS/toolchain/linux/iphone $THEOS/toolchain/swift
+		rm -r swift-5.3.2-RELEASE-ubuntu18.04.tar.zst $TMP
+
+	Note that the minimum SDK version required to compile Swift code is currently iOS 11.2.
 
 1. Get an iOS SDK:
 
@@ -58,11 +73,3 @@ All the commands shown on the following instructions are meant to be run as the 
 		unzip master.zip -d $TMP
 		mv $TMP/sdks-master/*.sdk $THEOS/sdks
 		rm -r master.zip $TMP
-
-1. Install the Swift toolchain (optional):
-
-		curl https://kabiroberai.com/toolchain/download.php?toolchain=swift-ubuntu-latest -Lo swift-toolchain.tar.gz
-		tar xzf swift-toolchain.tar.gz -C $THEOS/toolchain
-		rm swift-toolchain.tar.gz
-
-	Note that the minimum SDK version required to compile Swift code is currently iOS 11.2.
