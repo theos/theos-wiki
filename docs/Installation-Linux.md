@@ -62,7 +62,7 @@ All the commands shown on the following instructions are meant to be run as the 
 		ln -s $THEOS/toolchain/linux/iphone $THEOS/toolchain/swift
 		rm -r swift-5.3.2-RELEASE-ubuntu18.04.tar.zst $TMP
 
-	Note that the minimum SDK version required to compile Swift code is currently iOS 11.2.
+	Note that compiling Swift code requires a fairly modern SDK. It is recommended that you use the latest SDK that you can get.
 
 1. Get an iOS SDK:
 
