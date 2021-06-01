@@ -42,7 +42,7 @@ All the commands shown on the following instructions are meant to be run as the 
 
 1. Get a toolchain:
 
-	General use:
+	Without Swift support (smaller file size):
 
 		curl -LO https://github.com/sbingner/llvm-project/releases/latest/download/linux-ios-arm64e-clang-toolchain.tar.lzma
 		TMP=$(mktemp -d)
@@ -51,7 +51,7 @@ All the commands shown on the following instructions are meant to be run as the 
 		mv $TMP/ios-arm64e-clang-toolchain/* $THEOS/toolchain/linux/iphone/
 		rm -r linux-ios-arm64e-clang-toolchain.tar.lzma $TMP
 
-	Swift compatible:
+	With Swift support (larger file size):
 
 		sudo apt install zstd
 		curl -LO https://github.com/CRKatri/llvm-project/releases/download/swift-5.3.2-RELEASE/swift-5.3.2-RELEASE-ubuntu18.04.tar.zst
