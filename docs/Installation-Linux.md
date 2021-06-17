@@ -8,8 +8,6 @@ All the commands shown on the following instructions are meant to be run as the 
 
 1. Install the following prerequisites:
 
-	On Linux or WSL:
-
 		sudo apt-get install fakeroot git perl unzip build-essential libtinfo5
 
 	<sup>
@@ -20,15 +18,9 @@ All the commands shown on the following instructions are meant to be run as the 
 
 		sudo update-alternatives --set fakeroot /usr/bin/fakeroot-tcp
 
-	On Google Cloud Shell:
+	Additionally on Google Cloud Shell:
 
-		# Setup llvm repository
-		echo -e "deb http://apt.llvm.org/stretch/ llvm-toolchain-stretch-6.0 main\ndeb-src http://apt.llvm.org/stretch/ llvm-toolchain-stretch-6.0 main" | sudo tee -a /etc/apt/sources.list.d/llvm.list
-		wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add -
-		sudo apt update
-
-		# Install dependencies
-		sudo apt install bash coreutils fakeroot git grep make openssh-client perl rsync sed unzip libtinfo5
+		sudo apt install rsync
 
 1. Set up the `THEOS` environment variable:
 
