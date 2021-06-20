@@ -1,4 +1,4 @@
-This guide will help you install Theos on your Linux machine, Linux within Windows via [Windows Subsystem for Linux](https://docs.microsoft.com/windows/wsl), [Google Cloud Shell](https://console.cloud.google.com/cloudshell).
+This guide will help you install Theos on your Linux machine, Linux within Windows via [Windows Subsystem for Linux](https://docs.microsoft.com/windows/wsl), or [Google Cloud Shell](https://console.cloud.google.com/cloudshell).
 
 | Platform | Minimum OS version | Targets supported
 |----------|--------------------|-------------------|
@@ -8,29 +8,19 @@ All the commands shown on the following instructions are meant to be run as the 
 
 1. Install the following prerequisites:
 
-	Follow the instructions at <http://apt.llvm.org> to add the correct clang-6.0 source for your Linux distro. Then run `sudo apt-get update` to refresh your sources.
-
-	On Linux or WSL:
-
-		sudo apt-get install fakeroot git perl clang-6.0 build-essential
+		sudo apt-get install fakeroot git perl unzip build-essential libtinfo5
 
 	<sup>
-	<sup>*</sup> build-essential or equivalent for your distro.
+	<sup>*</sup> build-essential and libtinfo5 or the equivalents for your distro.
 	</sup>
 
 	Additionally on WSL:
 
 		sudo update-alternatives --set fakeroot /usr/bin/fakeroot-tcp
 
-	On Google Cloud Shell:
+	Additionally on Google Cloud Shell:
 
-		# Setup llvm repository
-		echo -e "deb http://apt.llvm.org/stretch/ llvm-toolchain-stretch-6.0 main\ndeb-src http://apt.llvm.org/stretch/ llvm-toolchain-stretch-6.0 main" | sudo tee -a /etc/apt/sources.list.d/llvm.list
-		wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add -
-		sudo apt update
-
-		# Install dependencies
-		sudo apt install bash clang-6.0 coreutils fakeroot git grep make openssh-client perl rsync sed
+		sudo apt install rsync
 
 1. Set up the `THEOS` environment variable:
 
@@ -42,11 +32,29 @@ All the commands shown on the following instructions are meant to be run as the 
 
 		git clone --recursive https://github.com/theos/theos.git $THEOS
 
-1. Get the toolchain:
+1. Get a toolchain:
 
-		curl https://kabiroberai.com/toolchain/download.php?toolchain=ios-linux -Lo toolchain.tar.gz
-		tar xzf toolchain.tar.gz -C $THEOS/toolchain
-		rm toolchain.tar.gz
+	Without Swift support (smaller file size):
+
+		curl -LO https://github.com/sbingner/llvm-project/releases/latest/download/linux-ios-arm64e-clang-toolchain.tar.lzma
+		TMP=$(mktemp -d)
+		tar --lzma -xvf linux-ios-arm64e-clang-toolchain.tar.lzma -C $TMP
+		mkdir -p $THEOS/toolchain/linux/iphone
+		mv $TMP/ios-arm64e-clang-toolchain/* $THEOS/toolchain/linux/iphone/
+		rm -r linux-ios-arm64e-clang-toolchain.tar.lzma $TMP
+
+	With Swift support (larger file size):
+
+		sudo apt install zstd
+		curl -LO https://github.com/CRKatri/llvm-project/releases/download/swift-5.3.2-RELEASE/swift-5.3.2-RELEASE-ubuntu18.04.tar.zst
+		TMP=$(mktemp -d)
+		tar --zst -xvf swift-5.3.2-RELEASE-ubuntu18.04.tar.zst -C $TMP
+		mkdir -p $THEOS/toolchain/linux/iphone $THEOS/toolchain/swift
+		mv $TMP/swift-5.3.2-RELEASE-ubuntu18.04/* $THEOS/toolchain/linux/iphone/
+		ln -s $THEOS/toolchain/linux/iphone $THEOS/toolchain/swift
+		rm -r swift-5.3.2-RELEASE-ubuntu18.04.tar.zst $TMP
+
+	Note that compiling Swift code requires a fairly modern SDK. It is recommended that you use the latest SDK that you can get.
 
 1. Get an iOS SDK:
 
@@ -57,11 +65,3 @@ All the commands shown on the following instructions are meant to be run as the 
 		unzip master.zip -d $TMP
 		mv $TMP/sdks-master/*.sdk $THEOS/sdks
 		rm -r master.zip $TMP
-
-1. Install the Swift toolchain (optional):
-
-		curl https://kabiroberai.com/toolchain/download.php?toolchain=swift-ubuntu-latest -Lo swift-toolchain.tar.gz
-		tar xzf swift-toolchain.tar.gz -C $THEOS/toolchain
-		rm swift-toolchain.tar.gz
-
-	Note that the minimum SDK version required to compile Swift code is currently iOS 11.2.
