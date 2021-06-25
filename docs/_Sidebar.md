@@ -13,6 +13,8 @@
   * [[Structure]]
 * [[Help]]
   * [[FAQ]]
+  * [[Parallel Building]]
+  * [[arm64e Deployment]]
   * [[License]]
 * See also
   * [iPhone Dev Wiki](http://iphonedevwiki.net/)
