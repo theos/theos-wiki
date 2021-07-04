@@ -34,6 +34,13 @@ All the commands shown on the following instructions are meant to be run as the 
 		unzip master.zip -d $TMP
 		mv $TMP/sdks-master/*.sdk $THEOS/sdks
 		rm -r master.zip $TMP
+		
+	You can extract original SDKs from old versions of Xcode available at [Apple Developer Downloads](https://developer.apple.com/download/all/).
+	For example you can get the iOS 5.1 SDK the following path in Xcode 4.3.1:
+	
+	```
+	/Applications/Xcode 4.3.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk
+	```
 
 1. Install the Swift toolchain (optional):
 
