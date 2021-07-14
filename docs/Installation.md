@@ -1,13 +1,13 @@
 ## Officially supported platforms
 
-Theos aims to be able to work on, and build for, the following platforms.
+Theos aims to work on, and build for, the following platforms.
 
-All the commands shown on the following instructions are meant to be run as the "user" user, _not_ **root**. Similarly, Theos is also meant to be run as a normal user, _not_ **root**.
+All the commands shown in the following instructions are meant to be run as the "user" user, _not_ **root**. Similarly, Theos is also meant to be run as a normal user, _not_ **root**.
 
-- **[[iOS|Installation-iOS]]** on iOS 5 and up.
-- **[[macOS|Installation-macOS]]** on Mavericks (10.9) and up.
-- **[[Linux/WSL|Installation-Linux]]** on Linux kernel 3.16 or Windows 10 build 14393, and up.
-- **[[Cygwin|Installation-Cygwin]]** on Windows 7 and up.
+- **[iOS](Installation-iOS.md)** on iOS 5 and up.
+- **[macOS](Installation-macOS.md)** on Mavericks (10.9) and up.
+- **[Linux/WSL](Installation-Linux.md)** on Linux kernel 3.16 or Windows 10 build 14393, and up.
+- **[Cygwin](Installation-Cygwin.md)** on Windows 7 and up.
 
 Other platforms (or versions older than listed above) may work, but be aware that they are unsupported. Theos may work on them now, but it may not in future. If you think we should officially support a platform not listed here, [get in touch](https://github.com/theos/theos/issues/new).
 
@@ -17,7 +17,7 @@ Theos utilises a [rolling release](https://en.wikipedia.org/wiki/Rolling_release
 
 	$THEOS/bin/update-theos
 
-If you get a “no such file or directory” error, you’re probably not using a recent version of Theos that added this script. As an alternative, switch to a directory containing a Theos makefile and then run:
+If you get a “no such file or directory” error, you’re probably not using a recent version of Theos that contains this script. As an alternative, switch to a directory containing a Theos makefile and then run:
 
 	make update-theos
 
@@ -35,4 +35,4 @@ make: *** No rule to make target 'update-theos'.  Stop.
 
 ## Switching from DHowett’s or rpetrich’s Theos
 
-Refer to [[Upgrading from legacy Theos]].
+Refer to [Upgrading from legacy Theos](Upgrading-from-legacy-Theos.md).

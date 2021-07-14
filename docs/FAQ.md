@@ -1,5 +1,5 @@
 ## All of my package versions contain `+debug` now! How do I stop this?
-Theos encourages using debug builds by default, rather than release builds. Building as a debug build provides more ease in using debuggers on the code, enables debug logging with `HBLogDebug()`, and makes syslog output colored so it’s easier to find in a sea of other log messages.
+By default, Theos favors the use of debug builds over release builds. Debug builds provide more information for debuggers, allow for debug logging with HBLogDebug(), and color the syslog, making your log(s) easier to spot in the sea of other messages.
 
 To disable debug mode, pass `DEBUG=0` as part of your command line to `make`. When you make a release build with `FINALPACKAGE=1`, debug will also be disabled (and the build number is also removed so your version number is cleaner).
 
@@ -18,7 +18,7 @@ If this is undesirable, you can tell NIC to revert to symlinking `theos`:
 $ echo 'link_theos = "1"' >> ~/.nicrc
 ```
 
-See [[nicrc(5)]] for more details on `.nicrc`.
+See [here](NIC.md#.nicrc) for more details on `.nicrc`.
 
 ## How do I use Swift in my projects?
-This information has moved to the [[Swift]] page.
+This information has moved to the [Swift](Swift.md) page.

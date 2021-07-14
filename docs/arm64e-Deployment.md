@@ -1,6 +1,6 @@
-As of iOS 12.0, a new architecture exists, named by Apple as **arm64e**. This implements the armv8.3 architecture, and is supported by the Apple A12 and newer processors. Specifically, this architecture is known for implementing pointer authentication.
+In iOS 12, Apple introduced a new architecture they call **arm64e**. This implements the armv8.3 architecture and is supported by the Apple A12 and newer processors. Specifically, this architecture is known for implementing pointer authentication.
 
-This architecture is currently not considered public by Apple, and is in flux, so it is not advised to be used. However, it is necessary to build for this architecture in order to inject code into iOS platform binaries, which are built using the arm64e architecture. Due to the nature of pointer authentication, backwards compatibility with arm64 (armv8.0) binaries is not implemented.
+This architecture is currently in flux and considered private by Apple, so its use is not advised. However, it is necessary to build for this architecture in order to inject code into iOS platform binaries which are built using the arm64e architecture. Due to the nature of pointer authentication, backwards compatibility with arm64 (armv8.0) binaries is not implemented.
 
 For more information on pointer authentication, refer to the [official documentation](https://developer.apple.com/documentation/security/preparing_your_app_to_work_with_pointer_authentication) on the topic.
 

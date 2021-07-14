@@ -1,6 +1,6 @@
 ## Places you can ask for help
 * Check [Theos/Troubleshooting](http://iphonedevwiki.net/index.php/Theos/Troubleshooting) on iPhone Dev Wiki first – common issues are listed here.
-* Connect to [IRC](http://iphonedevwiki.net/index.php/How_to_use_IRC) (#theos on irc.saurik.com) and ask your question there.
+* Join our [Discord](https://discord.gg/z4RTnrcbKW) and ask your question there.
 * Post a question at [/r/jailbreakdevelopers](https://www.reddit.com/r/jailbreakdevelopers).
 * Post a question on [Stack Overflow](https://stackoverflow.com/questions/tagged/theos) using the “theos” tag.
 
@@ -19,7 +19,6 @@ When sharing a snippet of code, it’s usually best to post it to a paste site. 
 
 * On Stack Overflow and Reddit, you can paste your code directly into the body, and then select it and click “Code” on the toolbar to ensure it is correctly formatted.
 * On GitHub and Discord, you can wrap your code in three backticks (<code>\`\`\` … \`\`\`</code>) to ensure it is correctly formatted.
-* On IRC, be aware that pasting more than a few lines at once will cause the server to kick (disconnect) you as it is considered flooding.
 
 ## make troubleshoot
 You can run `make troubleshoot` from within a project directory to upload some diagnostic information to [Ghostbin](https://ghostbin.co/), and copy the link to your clipboard. If `ghost` is not installed, you can do so by executing the following:
