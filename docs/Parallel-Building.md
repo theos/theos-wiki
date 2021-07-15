@@ -26,7 +26,7 @@ These instructions assume you use Homebrew and have installed Theos as outlined 
     ```
 
     For versions of macOS earlier than 10.15 Catalina, the default shell is bash rather than zsh. As such, you'll want to use `~/.bash_profile` instead of `~/.zprofile` in the command above.
-3. In order for this change to take effect, you must restart your shell. Open a new tab and type `make`. Now, the afforementioned notice should no longer appear and you should find that it’s significantly faster!
+3. In order for this change to take effect, you must restart your shell. Open a new tab and type `make`. Now, the aforementioned notice should no longer appear and you should find that it’s significantly faster!
 
 ----
 
