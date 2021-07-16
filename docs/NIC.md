@@ -1,4 +1,4 @@
-NIC is the New Instance Creator ([you can call him Nicolas!](https://github.com/theos/theos/commit/6c623614612ac07d1963c851e4a54302be6bf40d)). It provides a way to create projects (“instances”) based on templates. Theos comes with a handful of useful templates and there are others available from various developers.
+NIC is the New Instance Creator ([you can call him Nicolas!](https://github.com/theos/theos/commit/6c623614612ac07d1963c851e4a54302be6bf40d)). It provides a way to create projects (“instances”) based on templates. Theos comes with a handful of useful templates and others are available from various developers in the community.
 
 See also [iPhone Dev Wiki: NIC](http://iphonedevwiki.net/index.php/NIC).
 
@@ -13,7 +13,7 @@ NIC 2.0 - New Instance Creator
   [2.] iphone/activator_listener
   [3.] iphone/application_modern
   [4.] iphone/application_swift
-  [5.] iphone/control_center_module_11up
+  [5.] iphone/control_center_module-11up
   [6.] iphone/cydget
   [7.] iphone/flipswitch_switch
   [8.] iphone/framework
@@ -65,7 +65,7 @@ The following command line arguments are supported. Note that providing argument
 * **framework**: a framework to be used by other developers.
 * **library**: a linkable library (e.g. /usr/lib/libblah.dylib).
 * **notification_center_widget**: an iOS 5 – 6 Notification Center Today widget.
-* **notification_center_widget_ios7**: an iOS 7 – 9 Notification Center Today widget.
+* **notification_center_widget-7up**: an iOS 7 – 9 Notification Center Today widget.
 * **preference_bundle_modern**: a [PreferenceLoader](http://iphonedevwiki.net/index.php/PreferenceLoader) preference bundle subproject.
 * **theme**: a facelift for various UI elements.
 * **tool**: a command line tool (e.g. /usr/bin/blah).
