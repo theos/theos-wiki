@@ -15,7 +15,7 @@ Theos utilises a [rolling release](https://en.wikipedia.org/wiki/Rolling_release
 
 	$THEOS/bin/update-theos
 
-If you get a “no such file or directory” error, you’re probably not using a recent version of Theos that contains this script. As an alternative, switch to a directory containing a Theos makefile and then run:
+If you get a “no such file or directory” error, you’re probably using a very old version of Theos that lacks this script. As an alternative, switch to a directory containing a Theos makefile and then run:
 
 	make update-theos
 

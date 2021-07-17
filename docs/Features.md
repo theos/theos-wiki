@@ -1,6 +1,6 @@
 Below is a list of features implemented since the [original Theos](https://github.com/theos/theos/tree/legacy) by Dustin Howett. Said features are sorted in ascending order by their implementation date (where the latest additions are at the bottom).
 
-*(To do: These features should be properly documented.)*
+*(To do: These features should be properly documented and this file removed.)*
 
 * Fallback/last resort headers can be placed at `include/_fallback`; this can be used to provide drop-in replacements for missing SDK headers. (rpetrich)
 * `make update-theos`, predictably enough, updates Theos to the latest commit. (rpetrich)

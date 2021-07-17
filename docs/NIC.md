@@ -29,8 +29,8 @@ NIC 2.0 - New Instance Creator
   [18.] iphone/xpc_service
 Choose a Template (required): 16
 Project Name (required): Example
-Package Name [com.yourcompany.example]: tech.theos.example
-Authour/Maintainer Name [Craig Federighi]: Craig Federighi <notfederighi@theos.tech>
+Package Name [com.yourcompany.example]: dev.theos.example
+Authour/Maintainer Name [Craig Federighi]: Craig Federighi <notfederighi@theos.dev>
 [iphone/tweak] MobileSubstrate Bundle filter [com.apple.springboard]:
 [iphone/tweak] List of applications to terminate upon installation (space-separated, '-' for none) [SpringBoard]:
 Instantiating iphone/tweak in example/...
@@ -58,7 +58,7 @@ The following command line arguments are supported. Note that providing argument
 * **activator_event**: an [event](http://iphonedevwiki.net/index.php/Libactivator#Sending_Events_.28via_LAEvent.29) for Activator.
 * **activator_listener**: a [listener](http://iphonedevwiki.net/index.php/Libactivator#Observing_Events_.28via_LAListener.29) for Activator.
 * **application_modern**: a standard iOS app (for unsandboxed jailbreak use).
-* **application_swift**: a standard, swift-based iOS app (for unsandboxed jailbreak use).
+* **application_swift**: a standard, Swift-based iOS app (for unsandboxed jailbreak use).
 * **control_center_module-11up**: a custom control center module for iOS 11+ deployed via [CCSupport](https://github.com/opa334/CCSupport/wiki).
 * **cydget**: a [Cydget](https://cydia.saurik.com/info/cydget/) lock screen plugin.
 * **flipswitch_switch**: a switch for [Flipswitch](https://github.com/A3Tweaks/Flipswitch).
@@ -67,9 +67,9 @@ The following command line arguments are supported. Note that providing argument
 * **notification_center_widget**: an iOS 5 – 6 Notification Center Today widget.
 * **notification_center_widget-7up**: an iOS 7 – 9 Notification Center Today widget.
 * **preference_bundle_modern**: a [PreferenceLoader](http://iphonedevwiki.net/index.php/PreferenceLoader) preference bundle subproject.
-* **theme**: a facelift for various UI elements.
+* **theme**: a means of easily packaging your theme into a .deb using Theos' packaging functionality.
 * **tool**: a command line tool (e.g. /usr/bin/blah).
-* **tool_swift**: a swift-based command line tool (e.g. /usr/bin/blah).
+* **tool_swift**: a Swift-based command line tool (e.g. /usr/bin/blah).
 * **tweak**: a Cydia Substrate-based tweak.
 * **tweak_with_simple_preferences**: a Cydia Substrate-based tweak with a basic preference bundle.
 * **xpc_service**: a C-based [XPC](https://developer.apple.com/library/content/documentation/MacOSX/Conceptual/BPSystemStartup/Chapters/CreatingXPCServices.html) service.
