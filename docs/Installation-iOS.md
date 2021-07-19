@@ -1,10 +1,10 @@
-This guide will help you install Theos on your iOS jailbroken device.
+This guide will help you install Theos on your jailbroken iOS device.
 
 | Platform | Minimum OS version | Targets supported
 |----------|--------------------|-------------------|
 | **iOS** | 5.0 | iOS |
 
-All the commands shown on the following instructions are meant to be run as the "user" user, _not_ **root**. Similarly, Theos is also meant to be run as a normal user, _not_ **root**.
+All the commands shown in the following instructions are meant to be run as the "user" user, _not_ **root**. Similarly, Theos is also meant to be run as a normal user, _not_ **root**.
 
 1. Install the following prerequisites:
 
@@ -39,4 +39,4 @@ All the commands shown on the following instructions are meant to be run as the 
 
 	`swift-toolchain` is on the BigBoss repo.
 
-	Note that the minimum SDK version required to compile Swift code is currently iOS 11.2.
+	Note that compiling Swift code requires a fairly modern SDK. It is recommended that you use the latest SDK that you can get.

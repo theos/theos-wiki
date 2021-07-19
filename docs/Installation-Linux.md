@@ -4,7 +4,7 @@ This guide will help you install Theos on your Linux machine, Linux within Windo
 |----------|--------------------|-------------------|
 | **Linux** <br> **Windows 10** | Linux kernel 3.16 <br> Windows 10 build 14393 | Linux, iOS |
 
-All the commands shown on the following instructions are meant to be run as the "user" user, _not_ **root**. Similarly, Theos is also meant to be run as a normal user, _not_ **root**.
+All the commands shown in the following instructions are meant to be run as the "user" user, _not_ **root**. Similarly, Theos is also meant to be run as a normal user, _not_ **root**.
 
 1. Install the following prerequisites:
 
@@ -38,7 +38,7 @@ All the commands shown on the following instructions are meant to be run as the 
 
 		curl -LO https://github.com/sbingner/llvm-project/releases/latest/download/linux-ios-arm64e-clang-toolchain.tar.lzma
 		TMP=$(mktemp -d)
-		tar --lzma -xvf linux-ios-arm64e-clang-toolchain.tar.lzma -C $TMP
+		tar -xvf linux-ios-arm64e-clang-toolchain.tar.lzma -C $TMP
 		mkdir -p $THEOS/toolchain/linux/iphone
 		mv $TMP/ios-arm64e-clang-toolchain/* $THEOS/toolchain/linux/iphone/
 		rm -r linux-ios-arm64e-clang-toolchain.tar.lzma $TMP
@@ -48,7 +48,7 @@ All the commands shown on the following instructions are meant to be run as the 
 		sudo apt install zstd
 		curl -LO https://github.com/CRKatri/llvm-project/releases/download/swift-5.3.2-RELEASE/swift-5.3.2-RELEASE-ubuntu18.04.tar.zst
 		TMP=$(mktemp -d)
-		tar --zst -xvf swift-5.3.2-RELEASE-ubuntu18.04.tar.zst -C $TMP
+		tar -xvf swift-5.3.2-RELEASE-ubuntu18.04.tar.zst -C $TMP
 		mkdir -p $THEOS/toolchain/linux/iphone $THEOS/toolchain/swift
 		mv $TMP/swift-5.3.2-RELEASE-ubuntu18.04/* $THEOS/toolchain/linux/iphone/
 		ln -s $THEOS/toolchain/linux/iphone $THEOS/toolchain/swift

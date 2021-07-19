@@ -1,6 +1,6 @@
-This is a list of features implemented since the [original Theos](https://github.com/theos/theos/tree/legacy) by Dustin Howett. This list is sorted by the date the feature was added. The latest additions are at the bottom.
+Below is a list of features implemented since the [original Theos](https://github.com/theos/theos/tree/legacy) by Dustin Howett. Said features are sorted in ascending order by their implementation date (where the latest additions are at the bottom).
 
-*(To do: These features should be properly documented.)*
+*(To do: These features should be properly documented and this file removed.)*
 
 * Fallback/last resort headers can be placed at `include/_fallback`; this can be used to provide drop-in replacements for missing SDK headers. (rpetrich)
 * `make update-theos`, predictably enough, updates Theos to the latest commit. (rpetrich)
@@ -13,7 +13,7 @@ This is a list of features implemented since the [original Theos](https://github
 * All generated files are stored in `.theos`, rather than many different directories in the root of the project. (rpetrich)
 * `make clean-packages` removes non-final packages. (rpetrich)
 * Makes `dpkg-deb` use lzma compression, because the current format dpkg-deb uses (xz) is not supported by Telesphoreo’s old dpkg build. (kirb)
-* Packages are output to a subdirectory called `debs`. (kirb)
+* Packages are output to a subdirectory called `packages`. (kirb)
 * Use [hbang/headers](https://github.com/hbang/headers) as a submodule. (kirb)
 * Supports the iOS 7 simulator. (kirb)
 * Adds a `%property` directive that allows for creating a property on a hooked class. (eswick)
