@@ -1,21 +1,21 @@
 ## Contents
-* [Home](Home)
-* [Installation](Installation)
-  * [iOS](Installation-iOS)
-  * [macOS](Installation-macOS)
-  * [Linux](Installation-Linux)
-  * [Cygwin](Installation-Cygwin)
-  * [Upgrading from legacy Theos](Upgrading-from-legacy-Theos)
-* [Features](Features)
-  * [NIC](NIC)
-  * [Swift](Swift)
+* [[Home]]
+* [[Installation]]
+  * [[iOS|Installation-iOS]]
+  * [[macOS|Installation-macOS]]
+  * [[Linux|Installation-Linux]]
+  * [[Cygwin|Installation-Cygwin]]
+  * [[Upgrading from legacy Theos]]
+* [[Features]]
+  * [[NIC]]
+  * [[Swift]]
 * Technical
-  * [Structure](Structure)
-* [Help](Help)
-  * [FAQ](FAQ)
-  * [Parallel Building](Parallel-Building)
-  * [arm64e Deployment](arm64e-Deployment)
-  * [License](License)
+  * [[Structure]]
+* [[Help]]
+  * [[FAQ]]
+  * [[Parallel Building]]
+  * [[arm64e Deployment]]
+  * [[License]]
 * See also
   * [iPhone Dev Wiki](http://iphonedevwiki.net/)
   * [/r/jailbreakdevelopers](https://www.reddit.com/r/jailbreakdevelopers)

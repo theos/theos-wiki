@@ -1,6 +1,6 @@
 This guide will help you install Theos on your Windows (7, 8, and 8.1) machine via Cygwin.
 
-Please consider using [Windows Subsystem for Linux](Installation-Linux) instead if possible. Cygwin works but is quite limited.
+Please consider using [[Windows Subsystem for Linux|Installation-Linux]] instead if possible. Cygwin works but is quite limited.
 
 | Platform | Minimum OS version | Targets supported
 |----------|--------------------|-------------------|
