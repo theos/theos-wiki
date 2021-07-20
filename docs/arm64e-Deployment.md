@@ -26,14 +26,18 @@ There are two ways to overcome this:
 
   Once downloaded, opening the .xip file will begin extracting it. After extraction, rename the app to not conflict with your primary installation of Xcode. A good choice is `Xcode-11.7.app`.
 
-  Finally, change your selected Xcode command line tools version by using the following command:
+  Finally, change your selected Xcode command line tools version:
 
   ```bash
-  sudo xcode-select -switch /Applications/Xcode-11.7.app
+  sudo xcode-select -switch /Applications/Xcode-11.7.app/Contents/Developer
 
   # If you need to use the latest Xcode toolchain from the command line,
-  # simply switch it back:
-  sudo xcode-select -switch /Applications/Xcode.app
+  # use -reset:
+  sudo xcode-select -reset
+  
+  # Alternatively, you can temporarily change your command line tools version
+  # for just this terminal session:
+  export DEVELOPER_DIR=/Applications/Xcode-11.7.app/Contents/Developer
   ```
 
-  You can also use the Xcode GUI to do this, via Xcode &rarr; Preferences &rarr; Locations &rarr; Command Line Tools.
+  You can also use the Xcode GUI to change your command line tools version, via Xcode &rarr; Preferences &rarr; Locations &rarr; Command Line Tools.
