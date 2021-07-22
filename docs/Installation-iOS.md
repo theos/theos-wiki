@@ -8,12 +8,13 @@ All the commands shown in the following instructions are meant to be run as the 
 
 1. Install the following prerequisites:
 
-	* [Sam Bingner’s repository](http://repo.bingner.com/)
-	* Theos Dependencies (package on BigBoss repo, relies on the previous repository being installed first)
+	* [Procursus](https://apt.procurs.us/) or [Sam Bingner’s repository](http://repo.bingner.com/)
+	* Theos Dependencies (package on either the Procursus or BigBoss repo, relies on the previous repository being installed first)
 
 1. Set up the `THEOS` environment variable:
 
 		echo "export THEOS=~/theos" >> ~/.profile
+		echo "export THEOS=~/theos" >> ~/.zprofile
 
 	For this change to take effect, you must restart your shell. Kill the terminal app in the taskswitcher then re-open the terminal app and do `echo $THEOS` on your shell to check if this is working.
 
@@ -37,6 +38,6 @@ All the commands shown in the following instructions are meant to be run as the 
 
 1. Install the Swift toolchain (optional):
 
-	`swift-toolchain` is on the BigBoss repo.
+	Install `swift` if using Procursus, else install `swift-toolchain` from the BigBoss repo.
 
 	Note that compiling Swift code requires a fairly modern SDK. It is recommended that you use the latest SDK that you can get.
