@@ -13,10 +13,14 @@ All the commands shown in the following instructions are meant to be run as the 
 
 1. Set up the `THEOS` environment variable:
 
+	bash:
+	
 		echo "export THEOS=~/theos" >> ~/.profile
-		echo "export THEOS=~/theos" >> ~/.zprofile
+	zsh:
+	
+		echo "export THEOS=~/theos" >> ~/.zshrc
 
-	For this change to take effect, you must restart your shell. Kill the terminal app in the taskswitcher then re-open the terminal app and do `echo $THEOS` on your shell to check if this is working.
+	For this change to take effect, you must restart your shell. Kill the terminal app in the taskswitcher then re-open the terminal app and do `echo $THEOS` on your shell to check if this is working. If the output of `echo $THEOS` is blank, something has gone awry.
 
 1. Clone Theos to your device:
 
