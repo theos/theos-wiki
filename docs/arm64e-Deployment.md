@@ -32,8 +32,8 @@ There are two ways to overcome this:
   sudo xcode-select -switch /Applications/Xcode-11.7.app/Contents/Developer
 
   # If you need to use the latest Xcode toolchain from the command line,
-  # use -reset:
-  sudo xcode-select -reset
+  # use --reset:
+  sudo xcode-select --reset
   
   # Alternatively, you can temporarily change your command line tools version
   # for just this terminal session:
