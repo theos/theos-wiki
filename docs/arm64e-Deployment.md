@@ -41,3 +41,5 @@ There are two ways to overcome this:
   ```
 
   You can also use the Xcode GUI to change your command line tools version, via Xcode &rarr; Preferences &rarr; Locations &rarr; Command Line Tools.
+
+  Note: On macOS Monterey (12.0) and newer, Xcode 11.7 will have a no-sign 🚫 displayed on top of its icon, and when you double-click it, the error message “In order to use “Xcode-11.7.app”, you need to update to the latest version.” appears. While you won’t be able to use the Xcode app itself, its toolchain still appears to work without issues.
